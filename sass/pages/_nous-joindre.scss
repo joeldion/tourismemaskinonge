@@ -1,0 +1,76 @@
+@use '../abstracts' as a;
+
+.tm-joindre {
+
+    &__title {
+        &::before {
+            @include a.background-shape(3, yellow);
+            // transform: rotate(-50deg);
+            background-size: 220rem;
+            width: 220rem;
+            height: 220rem;
+            top: -58rem;
+            left: -52rem;
+
+            @include a.respond(screen_1440) {
+                background-size: 180rem;
+                width: 180rem;
+                height: 120rem;
+                top: -22rem;
+                left: -32rem;
+            }
+
+            @include a.respond(screen_1200) {
+                background-size: 175rem;
+                width: 180rem;
+                height: 140rem;
+                top: -38rem;
+                transform: rotate(7deg);
+            }
+
+            @include a.respond(screen_900) {
+                background-size: 140rem;
+                width: 150rem;
+                height: 92rem;
+                top: -20rem;
+                transform: rotate(11deg);
+
+            }
+
+        }
+
+        &::after {
+            @include a.path-illustration;
+            width: 70rem;
+            height: 45rem;
+            background: url(#{a.$theme-path}/img/shapes/path-mail-yellow.svg) center center no-repeat;
+            background-size: 70rem;
+            top: -5rem;
+            left: -10rem;
+            transform: rotate(25deg);
+
+            @include a.respond(screen_1440) {
+                background-size: 50rem;
+                width: 50rem;
+                height: 32rem;
+                top: 10rem;
+                left: -5rem;
+            }
+
+            @include a.respond(screen_1200) {
+                //background-size: 35rem;
+                // top: -5rem;
+                // right: -15rem;
+                // left: initial;
+                top: 25rem;
+                left: -8rem;
+                transform: rotate(30deg);
+            }
+
+            @include a.respond(screen_900) {
+                display: none;
+            }
+        }
+    } 
+
+}

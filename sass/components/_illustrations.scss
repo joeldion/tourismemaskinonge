@@ -1,0 +1,180 @@
+@use '../abstracts' as a;
+/*
+.path {
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &--marker {
+        width: 55rem;
+        height: 78rem;
+
+        &-blue {
+            background-image: url(a.$path-marker-blue);
+        }
+        &-green {
+            background-image: url(a.$path-marker-green);
+        }
+        &-yellow {
+            background-image: url(a.$path-marker-yellow);
+        }
+    }
+
+    &--marker-2 {
+        width: 72rem;
+        height: 156rem;
+
+        &-blue {
+            background-image: url(a.$path-marker-blue-2);
+        }
+        &-green {
+            background-image: url(a.$path-marker-green-2);
+        }
+        &-yellow {
+            background-image: url(a.$path-marker-yellow-2);
+        }
+    }
+
+    &--calendar {
+        width: 72rem;
+        height: 110rem;
+
+        &-blue {
+            background-image: url(a.$path-calendar-blue-2);
+        }
+        &-green {
+            background-image: url(a.$path-calendar-green-2);
+        }
+        &-yellow {
+            background-image: url(a.$path-calendar-yellow-2);
+        }
+    }
+
+    &--calendar-2 {
+        width: 74rem;
+        height: 110rem;
+
+        &-blue {
+            background-image: url(a.$path-calendar-blue-2);
+        }
+        &-green {
+            background-image: url(a.$path-calendar-green-2);
+        }
+        &-yellow {
+            background-image: url(a.$path-calendar-yellow-2);
+        }
+    }
+
+    &--blog {
+        width: 85rem;
+        height: 70rem;
+
+        &-blue {
+            background-image: url(a.$path-blog-blue);
+        }
+        &-green {
+            background-image: url(a.$path-blog-green);
+        }
+        &-yellow {
+            background-image: url(a.$path-blog-yellow);
+        }
+    }
+
+    &--blog-2 {
+        width: 75rem;
+        height: 54rem;
+
+        &-blue {
+            background-image: url(a.$path-blog-blue-2);
+        }
+        &-green {
+            background-image: url(a.$path-blog-green-2);
+        }
+        &-yellow {
+            background-image: url(a.$path-blog-yellow-2);
+        }
+    }
+
+    &--mail {
+        width: 72rem;
+        height: 44rem;
+
+        &-blue {
+            background-image: url(a.$path-mail-blue);
+        }
+        &-green {
+            background-image: url(a.$path-mail-green);
+        }
+        &-yellow {
+            background-image: url(a.$path-mail-yellow);
+        }
+    }
+
+    &--crown {
+        width: 57rem;
+        height: 78rem;
+
+        &-blue {
+            background-image: url(a.$path-crown-blue);
+        }
+        &-green {
+            background-image: url(a.$path-crown-green);
+        }
+        &-yellow {
+            background-image: url(a.$path-crown-yellow);
+        }
+    }
+
+    &--briefcase {
+        width: 48rem;
+        height: 65rem;
+
+        &-blue {
+            background-image: url(a.$path-briefcase-blue);
+        }
+        &-green {
+            background-image: url(a.$path-briefcase-green);
+        }
+        &-yellow {
+            background-image: url(a.$path-briefcase-yellow);
+        }
+    }
+
+    &--map {
+        width: 52rem;
+        height: 68rem;
+
+        &-blue {
+            background-image: url(a.$path-map-blue);
+        }
+        &-green {
+            background-image: url(a.$path-map-green);
+        }
+        &-yellow {
+            background-image: url(a.$path-map-yellow);
+        }
+    }
+
+    &--search {
+        width: 70rem;
+        height: 34rem;
+
+        &-blue {
+            background-image: url(a.$path-search-blue);
+        }
+        &-green {
+            background-image: url(a.$path-search-green);
+        }
+        &-yellow {
+            background-image: url(a.$path-search-yellow);
+        }
+    }
+}
+*/
+.facebook {
+    width: 5rem;
+    height: 5rem;
+    background-color: a.$color-blue-dark;
+    div {
+        background: url(a.$icon-greater) center center no-repeat;
+    }
+}

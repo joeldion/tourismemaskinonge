@@ -1,0 +1,37 @@
+.tm-meta-box input:not([type='checkbox']),
+.tm-meta-box textarea {
+    min-width: 400px;
+    max-width: 100%;
+}
+
+.form-table td {
+    vertical-align: top;
+}
+
+/* Meta Boxes */
+#editor .form-table input,
+#editor .form-table textarea {
+    width: 600px;
+    max-width: 100%;
+}
+
+/* Media Uploader */
+.tm-media-upload__preview {
+    max-width: 200px;
+    background-repeat: none;
+    background-position: center center;
+    background-size: cover;   
+    margin: 15px 0;
+}
+
+.tm-media-upload__preview.visible {
+    height: 200px;
+}
+
+.tm-media-remove {
+    display: none;
+}
+
+.tm-media-remove.visible {
+    display: block;
+}

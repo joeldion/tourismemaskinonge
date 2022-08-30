@@ -1,0 +1,142 @@
+@use '../abstracts' as a;
+
+.bubble {
+    z-index: 10 !important;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 47rem;
+    height: 35rem;
+    justify-content: center;
+
+    @include a.respond(screen_1200) {
+        width: 34rem;
+        height: 26rem;
+
+        > img {
+            max-width: 23rem;
+        }
+    }
+
+    @include a.respond(screen_900) {
+        position: absolute;
+        top: -5rem;
+        right: -3rem;
+        width: 34rem;
+        height: 26rem;
+    }
+
+    @include a.respond(screen_767) {
+        top: 0;
+        right: -2rem;
+        width: 28rem;
+        height: 20rem;
+
+        > img {
+            max-width: 18rem;
+        }
+    }
+
+    &::before {
+        content: '';
+        width: inherit;
+        height: inherit;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: block;
+        // transform: rotate(-32deg) translateY(-50%);
+        // top: 50%;
+        // left: -9rem;            
+        // position: absolute;
+        // left: -20rem;
+        // bottom: 8rem;
+    }
+
+    &--large {
+        width: 58rem;
+        height: 45rem;
+    }
+
+    &--bottom-left {
+        position: absolute;
+        bottom: 0;
+        left: -52rem;
+
+        @include a.respond(screen_1200) {
+            width: 52rem;
+            height: 37rem;
+            bottom: -5rem;
+            left: -30rem;
+        }
+
+        @include a.respond(screen_900) {
+            top: initial;
+            bottom: -7rem;
+            left: -10rem;
+        }
+
+        @include a.respond(screen_767) {           
+            bottom: -25rem;         
+        }
+
+    }
+
+    &--bottom-right {
+        align-self: end;
+        right: 15rem;
+        bottom: 5rem;
+
+        @include a.respond(screen_900) {
+            right: -3rem;
+        }
+
+    }
+
+    &--blue {
+        &::before {
+            background-image: url(a.$maski-shape-1-blue-dark);
+        }
+    }
+
+    &--green {
+        &::before {
+            background-image: url(a.$maski-shape-1-green-dark);
+        }
+    }
+
+    &--yellow {
+        &::before {
+            background-image: url(a.$maski-shape-1-yellow-dark);
+        }
+    }
+
+    &__content {
+        max-width: 42rem;
+
+        @include a.respond(screen_1200) {
+            max-width: 32rem;
+        }
+
+        li {
+            color: a.$color-white;
+            margin-bottom: 3.4rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &::marker {
+                color: a.$color-yellow-dark;
+            }
+
+        }
+        
+    }
+
+
+    > * {
+        position: absolute;
+    }
+
+}

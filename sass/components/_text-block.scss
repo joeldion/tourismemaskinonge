@@ -1,0 +1,89 @@
+@use '../abstracts' as a;
+
+.text-block {
+    max-width: 63rem;
+    margin-bottom: 12rem;
+    // min-height: 45rem;
+
+    @include a.respond(screen_900) {
+        margin-bottom: 5rem;
+    }
+
+    &--right {
+        margin-left: auto;
+
+        @include a.respond(screen_767) {
+            margin-left: 0;
+        }
+
+    }
+
+    &__big {
+        font-size: 5rem;
+        font-weight: 700;
+        line-height: 5.5rem;
+        margin-top: 0;
+        margin-bottom: 2rem;
+        // max-width: 58rem;
+        @include a.text-colors;
+
+        @include a.respond(screen_767) {
+            font-size: 3rem;
+            line-height: 3.5rem;
+        }
+    }
+
+    &__small {
+        font-family: a.$font-secondary;
+        font-size: 3rem;
+        font-weight: 500;
+        line-height: 4rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+        @include a.text-colors;
+
+        a {
+            color: inherit;
+        }
+
+
+        @include a.respond(screen_767) {
+            font-size: 2rem;
+        }
+    }
+
+    &__body {
+        color: a.$color-white;
+
+        p, li {
+            font-family: a.$font-secondary;
+            font-weight: 300;
+            font-size: 2rem;
+            line-height: 3rem;
+            color: inherit;
+        }
+
+        &--black {
+            p, li {
+                color: a.$color-black;
+            }        
+        }
+
+    }
+
+    // &__contact {
+    //     display: grid;
+    //     row-gap: 2.5rem;
+    //     margin-top: 5rem;
+    // }
+
+    .btn {
+        margin-top: 4rem;
+
+        // @include a.respond(screen_767) {
+        //     margin-top: 5rem;
+        // }
+    }
+}

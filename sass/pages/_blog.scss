@@ -1,0 +1,98 @@
+@use '../abstracts' as a;
+
+.tm-blog {
+    .slide-01 {
+        background-image: url('/tourismemaskinonge/wp-content/themes/tourismemaskinonge/img/placeholders/slide-tournesols.jpg');
+    }
+
+    // &--single {
+    //     grid-template-columns: [post-main-start] minmax(72rem, 100%) [post-main-end post-side-start] 1fr [post-side-end];
+    //     grid-template-rows: [post-title-start] 30rem [post-title-end post-thumb-start] 72rem [post-thumb-end post-content-start] 1fr [post-content-end post-related-start] 80rem [post-related-end];
+    // }
+
+    &__title {
+        &::before {
+            @include a.background-shape(3-invert, yellow);
+            transform: rotate(10deg);
+
+            @include a.respond(screen_1920) {
+                background-size: 250rem;
+                width: 250rem;
+                height: 164rem;
+                top: -7rem;
+                left: -46rem;
+            }
+
+            @include a.respond(screen_1440) {
+                background-size: 170rem;
+                width: 190rem;
+                height: 164rem;
+                top: -34rem;
+                left: -34rem;
+            }
+        }
+
+        &--single {
+            &::before {
+                @include a.background-shape(1, blue);
+                background-size: 108rem;
+                width: 108rem;
+                height: 104rem;
+                top: -34rem;
+                left: -44rem;
+                transform: rotate(-33deg);
+            }
+
+            &::after {
+                // @include a.path-illustration;
+                // width: 84rem;
+                // height: 70rem;
+                // background: url(#{a.$theme-path}/img/shapes/path-blog-blue.svg) center center no-repeat;
+                // // background-size: cover;
+                // top: -22rem;
+                // right: 0;
+            }
+        }
+
+        .text-block {
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__items {
+        margin-top: 20rem;
+
+        .card__listing {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 3rem;
+            row-gap: 7rem;
+        }
+
+        .card {
+            position: relative;
+
+            @include a.respond(screen_1200, min) {
+                &:nth-child(3n-1) {
+                    bottom: 12rem;
+                }
+
+                &:nth-child(3n) {
+                    bottom: 24rem;
+                }
+            }
+
+            @include a.respond(screen_1200) {
+                &:nth-child(even) {
+                    bottom: 10rem;
+                }
+            }
+
+            @include a.respond(screen_767) {
+                &:nth-child(even) {
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}

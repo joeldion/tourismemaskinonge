@@ -1,0 +1,119 @@
+@use '../abstracts' as a;
+
+.header {
+    position: relative;
+    grid-column: content-start / content-end;
+    grid-row: header-start / header-end;
+    display: grid;
+    grid-template-columns: [logo-start] 37rem [logo-end nav-start] 1fr [nav-end];
+    column-gap: 2rem;
+    margin: 8rem 0 0 0;
+
+    @include a.respond(screen_1200) {
+        // grid-template-columns: [logo-start] 32rem [logo-end nav-start] 1fr [nav-end];
+        grid-template-columns: [logo-start] 1fr [logo-end nav-start] 1fr [nav-end];
+    }
+
+    @include a.respond(screen_500) {
+        // grid-template-columns: [logo-start] 1fr [logo-end nav-start] 1fr [nav-end];
+        margin: 4rem 0 0 0;
+    }
+
+
+    &.sticky {
+        position: fixed;
+        padding: 0 8rem;
+        margin: 0;
+        width: 100%;
+        z-index: 40;
+        background-color: a.$color-white;
+        display: flex;
+        align-items: center;
+        height: 10rem;
+        animation: stickyMenuSlideDown 0.5s ease-out;
+        //grid-template-columns: [logo-start] 37rem [logo-end nav-start] 1fr [nav-end];
+
+        @include a.respond(screen_500) {
+            padding: 0;
+        }
+
+        .header__logo {
+            position: relative;
+            top: 4px;
+
+            &::before {
+                display: none;
+            }
+
+            img {
+                position: initial;
+                width: 20rem;
+            }
+        }
+    }
+
+    &__logo {
+        grid-column: logo-start / logo-end;
+        position: absolute;
+        top: -2.5rem;
+        left: 3rem;
+        z-index: 10;
+
+        @include a.respond(screen_500) {
+            top: 0;
+            left: 2rem;
+        }
+
+        img {
+            position: absolute;
+            width: 30.6rem;
+            max-width: inherit;
+
+            @include a.respond(screen_1200) {
+                width: 23.7rem;
+            }
+
+            @include a.respond(screen_500) {
+                width: 15rem;
+            }
+        }
+
+        &::before {
+            content: '';
+            width: 50rem;
+            height: 27rem;
+            background: url('#{a.$theme-path}/img/shapes/maski-shape-logo.svg') center center no-repeat;
+            background-size: 44rem;
+            position: absolute;
+            top: -7.5rem;
+            left: -8.2rem;
+
+            @include a.respond(screen_1200) {
+                background-size: 37rem;
+                top: -9.5rem;
+                left: -11.2rem;
+            }
+
+            @include a.respond(screen_500) {
+                background-size: 26.5rem;
+                top: -10.5rem;
+                left: -18rem;
+            }
+
+        }
+    }
+
+    &__nav {
+        grid-column: nav-start / nav-end;
+        width: 100%;
+        max-width: 68.5rem;
+        margin-left: auto;
+        //position: relative;
+        z-index: 30;
+
+        @include a.respond(screen_767) {
+            max-width: 100%;
+        }
+
+    }
+}

@@ -1,0 +1,113 @@
+@use '../abstracts' as a;
+
+.tm-affaires {
+
+    &__title {
+        &::before {
+            @include a.background-shape(3-invert, yellow);
+            transform: rotate(17deg);
+            background-size: 230rem;
+            width: 235rem;
+            height: 156rem;
+            top: -5rem;
+            left: -45rem;
+
+            @include a.respond(screen_1440) {
+                background-size: 175rem;
+                width: 180rem;
+                top: -25rem;
+                left: -33rem;
+            }
+
+            @include a.respond(screen_1200) {
+                background-size: 150rem;
+                top: -45rem;
+                left: -38rem;
+            }
+        }
+
+        &::after {
+            @include a.path-illustration;
+            width: 66rem;
+            height: 80rem;
+            background: url(#{a.$theme-path}/img/shapes/path-suitcase-yellow.svg) center center no-repeat;
+            background-size: 46rem;
+            top: 22rem;
+            left: 22rem;
+            z-index: 10;
+
+            @include a.respond(screen_1200) {
+
+            }
+
+            @include a.respond(screen_1200) {
+                background-size: 48rem;
+            }
+
+            @include a.respond(screen_900) {
+                display: none;
+            }
+        }
+
+        &--secondary {
+            margin-top: 30rem;
+            margin-bottom: 10rem;
+
+            &::before {
+                @include a.background-shape(1, blue);
+                transform: rotate(160deg);
+                background-size: 230rem;
+                width: 235rem;
+                height: 225rem;
+                top: -25rem;
+                left: -45rem;
+    
+                @include a.respond(screen_1440) {
+                    background-size: 180rem;
+                    width: 210rem;
+                    top: -45rem;
+                    left: -32rem;
+                }
+    
+                @include a.respond(screen_1200) {                    
+                    background-size: 150rem;
+                    top: -60rem;
+                    left: -45rem;
+                }
+
+                @include a.respond(screen_900) {  
+                    left: -60rem;
+                }
+
+            }
+
+            &::after {
+                @include a.path-illustration;
+                width: 66rem;
+                height: 80rem;
+                background: url(#{a.$theme-path}/img/shapes/path-suitcase-blue.svg) center center no-repeat;
+                background-size: 46rem;
+                top: -20rem;
+                left: initial;
+                right: 52%;
+                z-index: 10;
+    
+                @include a.respond(screen_1200) {
+                    background-size: 32rem;            
+                    right: 60%;
+                }
+
+            }
+
+        }
+
+        .text-block {
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__items {
+        
+    }
+
+}

@@ -1,0 +1,36 @@
+@use '../abstracts' as a;
+
+.tm-search {
+    &__title {
+        &::before {
+            @include a.background-shape(3, green);
+            background-size: 210rem;
+            width: 205rem;
+            height: 137rem;
+            top: -38rem;
+            left: -40rem;
+            transform: rotate(3deg);
+        }
+
+        &::after {
+            @include a.path-illustration;
+            width: 50rem;
+            height: 36rem;
+            background: url(#{a.$theme-path}/img/shapes/path-search-green.svg) center center no-repeat;
+            background-size: 50rem;
+            top: -16rem;
+            right: 0;
+
+            @include a.respond(screen_1200) {
+                // width: 50rem;
+                height: 25rem;
+                // background-size: 50rem;
+            }
+
+            @include a.respond(screen_900) {
+                display: none;
+            }
+
+        }
+    }
+}

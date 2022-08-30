@@ -1,0 +1,68 @@
+@keyframes spin {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes stickyMenuSlideDown {
+    0% {
+        top: -10rem;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+/*
+@keyframes stickyMenuSlideUp {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: -10rem;
+    }
+}
+*/
+
+@keyframes scaleUp {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes scaleDown {
+    0% {
+        transform: scaleY(1);
+    }
+    100% {
+        transform: scaleY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1; 
+    }
+}
+
+@keyframes fadeInTransparent {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: .8; 
+    }
+}

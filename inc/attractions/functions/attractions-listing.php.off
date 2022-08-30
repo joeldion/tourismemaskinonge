@@ -1,0 +1,66 @@
+<?php 
+/*
+ * Function: Get Attractions Listing
+ */
+
+add_action( 'wp_ajax_get_attract_listing', 'get_attract_listing' );
+add_action( 'wp_ajax_nopriv_get_attract_listing', 'get_attract_listing' );
+
+function get_attract_listing( $category = 0, $option = '', $exclude = [] ) {
+
+    if ( isset( $_POST['category'] ) ) $category = $_POST['category'];
+
+    ob_start();
+
+    $is_business = false;
+    $meta_query = '';
+    $tax_query = '';
+
+    if ( $category !== 0 ) {
+        $tax_query = [
+                    [
+                        'taxonomy'  =>  'attraction_category',
+                        'field'     =>  'term_id',
+                        'terms'     =>  $category
+                    ]
+                ];
+    }
+    
+    if ( $option === 'business' ) {
+        $is_business = true;
+        $meta_query =   [
+                            [
+                                'key'   =>  '_tm_attract_business',
+                                'value' =>  '1'
+                            ]
+                        ];
+    }
+
+    $args = [
+        'post_type'     =>  'attraction',
+        'parent'        =>  $category,
+        'orderby'       =>  'title',
+        'order'         =>  'asc',
+        'post__not_in'  =>  $exclude,
+        'meta_query'    =>  $meta_query,
+        'tax_query'     =>  $tax_query
+    ];
+
+    $attractions = new WP_Query( $args );
+
+    if ( $attractions->have_posts() ):
+        ?>
+        <div class="cards__listing" id="listing" data-post-type="attraction">
+            <?php 
+                while ( $attractions->have_posts() ): $attractions->the_post();                    
+                    $attract = new TMCard( get_the_ID(), 'attraction', '', false, $is_business );
+                    echo $attract->output();
+                endwhile;
+            ?>
+        </div>
+        <?php
+    endif;
+
+    return ob_get_clean();
+
+}

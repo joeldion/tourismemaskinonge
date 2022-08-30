@@ -1,0 +1,70 @@
+@use '../abstracts' as a;
+
+.nav-icon {
+    &,
+    &:link,
+    &:visited {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        display: inline-flex;
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        width: inherit;
+        height: inherit;
+        position: absolute;
+    }
+
+    &::before {
+        border-radius: 50%;
+        transition: all 0.2s;
+    }
+
+    &--blue {
+        &::before {
+            background-color: a.$color-blue-dark;
+        }
+        &:hover {
+            &::before {
+                background-color: a.$color-blue-light;
+            }
+        }
+    }
+
+    &--green {
+        &::before {
+            background-color: a.$color-green-dark;
+        }
+        &:hover {
+            &::before {
+                background-color: a.$color-green-light;
+            }
+        }
+    }
+
+    &--yellow {
+        &::before {
+            background-color: a.$color-yellow-light;
+        }
+        &:hover {
+            &::before {
+                background-color: a.$color-yellow-dark;
+            }
+        }
+    }
+
+    &--left {
+        &::after {
+            background: transparent url(a.$icon-greater) center center/1.8rem no-repeat;
+            transform: rotate(180deg);
+        }
+    }
+    &--right {
+        &::after {
+            background: transparent url(a.$icon-greater) center center/1.8rem no-repeat;
+        }
+    }
+}
