@@ -1,0 +1,33 @@
+@use '../abstracts' as a;
+
+.wp-block {
+    &-image {
+        margin: 5rem 0;
+        border-radius: a.$tm-border-radius;
+    }
+
+    &-pullquote {
+        margin: 5rem;
+        text-align: left;
+        padding: 0 0 0 2rem;
+        border-left-width: 2px;
+        border-left-color: a.$color-gray-light;
+        border-left-style: solid;
+
+        blockquote {
+            > p {
+                font-size: 2.4rem;
+            }
+        }
+    }
+
+    &-separator {
+        margin: 4rem 0;
+    }
+}
+
+figcaption {
+    text-align: center;
+    font-size: 1.4rem;
+    color: a.$color-gray-light;
+}

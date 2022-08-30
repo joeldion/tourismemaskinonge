@@ -1,0 +1,75 @@
+@use '../abstracts' as a;
+
+.tm-chemin {
+    &__title {
+        &::before {
+            @include a.background-shape(3-invert, blue);
+            transform: rotate(-3deg);
+            background-size: 205rem;
+            width: 212rem;
+            height: 205rem;
+            top: -54rem;
+            left: -44rem;
+
+            @include a.respond(screen_1440) {
+                background-size: 192rem;
+                width: 180rem;
+                height: 156rem;
+                top: -32rem;
+                left: -30rem;
+            }
+
+            @include a.respond(screen_1200) {
+                background-size: 150rem;
+                width: 180rem;
+                height: 156rem;
+                top: -45rem;
+                left: -38rem;
+            }
+        }
+
+        &::after {
+            @include a.path-illustration;
+            width: 66rem;
+            height: 80rem;
+            background: url(#{a.$theme-path}/img/shapes/path-chemin-blue.svg) center center no-repeat;
+            background-size: 56rem;
+            top: 20rem;
+            right: 0;
+
+            @include a.respond(screen_1200) {
+                background-size: 48rem;
+            }
+
+            @include a.respond(screen_900) {
+                display: none;
+            }
+        }
+
+        &--single {
+            &::before {
+                @include a.background-shape(1, blue);
+                background-size: 108rem;
+                width: 108rem;
+                height: 104rem;
+                top: -34rem;
+                left: -44rem;
+                transform: rotate(-33deg);
+            }
+
+            &::after {
+                // @include a.path-illustration;
+                // width: 84rem;
+                // height: 70rem;
+                // background: url(#{a.$theme-path}/img/shapes/path-blog-blue.svg) center center no-repeat;
+                // // background-size: cover;
+                // top: -22rem;
+                // right: 0;
+            }
+        }
+
+        .text-block {
+            margin-bottom: 3rem;
+        }
+    }
+}

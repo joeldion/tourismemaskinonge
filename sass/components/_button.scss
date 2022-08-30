@@ -1,0 +1,105 @@
+@use '../abstracts' as a;
+
+.btn {
+    position: relative;
+
+    // Default: (+)
+    &,
+    &:link,
+    &:visited {
+        color: a.$color-white;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 2.5rem;
+        text-decoration: none;
+        border-radius: 50px;
+        padding: 1.5rem 8.5rem 1.5rem 2rem;
+        height: 6.4rem;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        width: 6.4rem;
+        height: 6.4rem;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transition: all 0.2s;
+    }
+
+    &::before {
+        border-radius: 50%;
+    }
+
+    &::after {
+        background-size: 2rem;
+    }
+
+    &--blue {
+        @include a.gradient-with-icon(a.$grad-blue-left-right, a.$color-blue-light, a.$color-blue-dark, small, 'btn');
+    }
+
+    &--green {
+        @include a.gradient-with-icon(a.$grad-green-left-right, a.$color-green-light, a.$color-green-dark, small, 'btn');
+    }
+
+    &--yellow {
+        @include a.gradient-with-icon(a.$grad-yellow-left-right, a.$color-yellow-light, a.$color-yellow-dark, small, 'btn');
+    }
+
+    &--more {
+        &::after {
+            background: transparent url(a.$icon-plus) center center no-repeat;
+        }
+    }
+
+    &--cta {
+        &::after {
+            background: transparent url(a.$icon-greater) center center no-repeat;
+        }
+    }
+
+    &--selector {
+        &::after {
+            background: transparent url(a.$icon-greater) center center no-repeat;
+            transform: rotate(90deg);
+            top: 1px;
+        }
+    }
+
+    &--marker {
+        &::after {
+            background: transparent url(a.$icon-marker) center center no-repeat;
+        }
+    }
+
+    &--facebook {
+        &::after {
+            background: transparent url(a.$icon-facebook) center center no-repeat;
+        }
+    }
+
+    &__loading {
+        position: absolute;
+        right: -5rem;
+        width: 3rem;
+        height: 3rem;
+        border: 3px solid a.$color-gray-light;
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: spin 1s linear 0s infinite normal;
+        opacity: 0;
+        transition: all .2s;
+
+        &.visible {
+            opacity: 1;
+        }
+
+    }
+
+}

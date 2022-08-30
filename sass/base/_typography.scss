@@ -1,0 +1,146 @@
+@use '../abstracts' as a;
+
+body {
+    font-family: a.$font-primary, sans-serif;
+    font-weight: 400;
+    font-size: a.$default-font-size;
+    color: a.$color-black;
+}
+
+.heading {
+    &-main {
+        font-size: 5rem;
+        font-weight: 700;
+        line-height: 5.5rem;
+
+        &--blue {
+            color: a.$color-blue-dark;
+        }
+    }
+    &-sub {
+        font-family: a.$font-secondary;
+        font-size: 3rem;
+        font-weight: 500;
+        line-height: 4rem;
+        text-transform: uppercase;
+
+        &--blue {
+            color: a.$color-blue-light;
+        }
+    }
+}
+
+h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 6.5rem;
+    @include a.heading-text;
+}
+
+h2 {
+    font-size: 5rem;
+    line-height: 5.5rem;
+    @include a.heading-text;
+
+    @include a.respond(screen_500) {
+        font-size: 3rem;
+        line-height: 3.5rem;
+    }
+}
+
+h3 {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    @include a.heading-text;
+}
+
+h4 {
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    @include a.heading-text;
+}
+
+h5 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    @include a.heading-text;
+}
+
+h6 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    @include a.heading-text;
+}
+
+p,
+li {
+    color: a.$color-black;
+    font-family: a.$font-secondary;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 3rem;
+    // margin-bottom: 3.5rem;
+    margin-bottom: 2rem;
+
+    // &:last-child {
+    //     margin-bottom: 4.5rem;
+    // }
+
+    &.white {
+        color: a.$color-white;
+    }
+}
+
+ul,
+ol {
+    padding-left: 1.6rem;
+}
+
+li {
+    margin-bottom: 1.5rem;
+
+    // &:last-child {
+    //     margin-bottom: 3.5rem;
+    // }
+
+    &::marker {
+        color: a.$color-blue-dark;
+    }
+}
+
+a {
+    color: a.$color-blue-dark;
+    text-decoration: none;
+}
+
+sup {
+    font-size: 1.2rem;
+    line-height: 0;
+}
+
+strong {
+    font-weight: 500;
+}
+
+.small-header {
+    font-family: a.$font-secondary;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 4rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    @include a.respond(screen_900) {
+        font-size: 2rem;
+    }
+
+    &--blue {
+        color: a.$color-blue-light;
+    }
+    &--green {
+        color: a.$color-green-dark;
+    }
+    &--yellow {
+        color: a.$color-yellow-dark;
+    }
+}

@@ -1,0 +1,41 @@
+Thème MRC de Maskinongé
+Description : Site officiel de Tourisme Maskinongé | Développement et intégration : Joël Dion | Graphisme : Cognitif
+Version: 1.0.9
+
+1.0.1
+- Changement line-height sub-menu
+- Ordre des articles du blogue à l'accueil
+
+1.0.2
+- Correction : Événements apparentés qui apparaissent sans être publiés 
+
+1.0.3 
+- Ajout du paramètre d'URL "mode" pour un accès plus rapide à la carte des attraits
+
+1.0.4
+- Correction : Coordonnées (lat, lng) des attraits qui ne sont plus générées en admin
+
+1.0.5
+- Changement de la mise en page du menu principal pour les éléments sans enfants (liste horizontale)
+
+1.0.6
+- Correction : bug visuel du texte qui embarque sur la forme jaune (fiche d'attrait)
+
+1.0.7
+- Les événements à plusieurs dates sont désormais affichés selon leur date de début au lieu de leur date de fin
+
+1.0.9
+- Changement de l'image du teaser "dormir"
+
+1.1.5
+- Ajout d'un popup (modal) temporaire
+
+1.2.1
+- Ajout d'un template par défaut (page.php)
+- Modification de l'apparence du texte en gras ("font-weight: 500")
+
+1.2.2
+- Changement de style aux éléments <sup> ("line-height: 0")
+
+1.2.3
+- "tm-script.js" utilise maintenant la version du Thème sur le site public au lieu du timestamp

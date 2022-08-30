@@ -1,0 +1,139 @@
+@use '../abstracts' as a;
+
+.tm-attract {
+ 
+    &__title {
+        &::before {
+            @include a.background-shape(1, green);
+            background-size: 193rem;
+            width: 205rem;
+            height: 195rem;
+            top: -55rem;
+            left: -40rem;
+            transform: rotate(-55deg);            
+
+            @include a.respond(screen_1400) {
+                width: 195rem;                
+                top: -52rem;
+                transform: rotate(-62deg);
+            }
+
+            @include a.respond(screen_900) {
+                top: -60rem;
+            }
+
+        }
+
+        &::after {
+            @include a.path-illustration;
+            width: 56rem;
+            height: 57rem;
+            background: url(#{a.$theme-path}/img/shapes/path-marker-green.svg) center center no-repeat;
+            background-size: 40rem;
+            top: -20rem;
+
+            @include a.respond(screen_1200) {
+                width: 30rem;
+                height: 45rem;
+                background-size: 30rem;
+                top: 5rem;
+                left: -5rem;
+            }
+
+            @include a.respond(screen_900) {
+                display: none;
+            }
+
+        }
+
+        &--single {
+            &::before {
+                @include a.background-shape(1, yellow);
+                background-size: 200rem;
+                width: 200rem;
+                height: 200rem;
+                top: -70rem;
+                left: initial;
+                right: -114rem;
+                transform: rotate(-60deg);
+
+                @include a.respond(screen_1200) {
+                    background-size: 185rem;
+                    top: -82rem;
+                }
+
+                @include a.respond(screen_900) {
+                    transform: rotate(-58deg);
+                    background-size: 150rem;
+                    left: -30rem;
+                    right: 0;
+                }
+
+                @include a.respond(screen_767) {
+                    // background-size: 185rem;
+                    // top: -85rem;
+                    // left: -32rem;
+                    background-size: 120rem;
+                    top: -86rem;
+                    left: -50rem;
+                }
+
+                @include a.respond(screen_500) {                    
+                    top: -82rem;                  
+                }
+            }
+
+            &::after {
+                @include a.path-illustration;
+                width: 59rem;
+                height: 83rem;
+                background: url(#{a.$theme-path}/img/shapes/path-marker-yellow.svg) center center no-repeat;
+                background-size: 58rem;
+                top: 40rem;
+                right: -18rem;
+
+                // @include a.respond(screen_1440) {
+                //     right: 5rem;
+                // }
+
+                @include a.respond(screen_1200) {
+                    background-size: 40rem;
+                    top: 30rem;
+                    right: -15rem;
+                    left: initial;
+                }
+
+                @include a.respond(screen_900) {
+                    background-size: 40rem;
+                    top: 15rem;
+                    right: -15rem;
+                }
+
+                @include a.respond(screen_767) {
+                    top: 30rem;
+                }
+
+                @include a.respond(screen_500) {
+                    background-size: 25rem;
+                    top: 20rem;
+                    right: -20rem;
+                }
+            }
+
+        }
+    }
+
+    &__items {
+
+    }
+
+    &__item {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+
+    }
+
+}

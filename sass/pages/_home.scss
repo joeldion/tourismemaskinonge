@@ -1,0 +1,335 @@
+@use '../abstracts' as a;
+
+.tm-home {
+    grid-template-rows: repeat(4, max-content);
+    // grid-template-rows: [intro-start] 202.4rem [intro-end attractions-start] 140rem [attraction-end events-start] 130rem [events-end blog-start] 193rem [blog-end];
+    row-gap: 22.5rem;
+
+    @include a.respond(screen_767) {
+        row-gap: 10rem;
+    }
+
+    @include a.respond(screen_500) {
+        row-gap: 22.5rem;
+    }
+
+    &__intro {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        display: grid;
+        grid-template-columns: 1fr 56%;
+        // grid-template-columns: 42% 56%;
+        // grid-template-columns: minmax(20rem, 51rem) minmax(25rem, 68.5rem);
+        // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-rows: repeat(15, 9.2rem);
+        column-gap: 2%;
+        row-gap: 4.6rem;
+
+        @include a.respond(screen_900) {
+            grid-template-columns: 1fr 55%;
+            // grid-template-columns: 40% 55%;
+            grid-template-rows: repeat(15, 6.5rem);
+            column-gap: 5%;
+            row-gap: 3.5rem;
+        }
+
+        @include a.respond(screen_767) {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(6, min-content);
+            column-gap: 0;
+            row-gap: 5rem;
+        }
+
+        &::before {
+            @include a.background-shape(3, yellow);
+            width: 200rem;
+            height: 115rem;
+            top: -38rem;
+            left: -38rem;
+            transform: rotate(4deg);
+
+            @include a.respond(screen_1920) {
+                // background-size: 200rem;
+                // height: 132rem;
+                background-size: 218rem;
+                height: 143rem;
+            }
+
+            @include a.respond(screen_1440) {
+                background-size: 175rem;
+                height: 118rem;
+            }
+
+            @include a.respond(screen_900) {
+                background-size: 150rem;
+                top: -34rem;
+                left: -50rem;
+            }
+
+            @include a.respond(screen_500) {
+                background-size: 170rem;
+                top: -33rem;
+                left: -64rem;
+            }
+        }
+
+        .text-block {
+            grid-column: 2 / -1;
+            position: relative;
+            bottom: 13.8rem;
+            // bottom: 4rem;
+            margin-left: auto;
+
+            @include a.respond(screen_900) {
+                grid-column: 1 / -1;
+                grid-row-start: 1;
+                margin-left: 0;
+            }
+
+            @include a.respond(screen_900) {
+                bottom: 0;
+            }
+        }
+    }
+
+    &__attractions {
+        grid-row: 2 / 3;
+        @include a.section-with-card-slider;
+
+        @include a.respond(screen_767) {
+            margin-top: 30rem; 
+        }
+
+        &::before {
+            @include a.background-shape(1, green);
+            width: 175rem;
+            height: 195rem;
+            top: -81rem;
+            left: -25rem;
+            transform: rotate(-13deg);
+
+            @include a.respond(screen_1920) {
+                background-size: 200rem;
+                width: 200rem;
+            }
+
+            @include a.respond(screen_900) {
+                background-size: 125rem;
+                width: 120rem;
+                top: -75rem;
+            }
+        }
+
+        &::after {
+            @include a.path-illustration;
+            width: 55rem;
+            height: 77rem;
+            background: url(#{a.$theme-path}/img/shapes/path-marker-green.svg) center center no-repeat;
+            // background-size: cover;
+            top: -42rem;
+            right: 0;
+
+            @include a.respond(screen_1200) {
+                width: 40rem;
+                height: 57rem;
+                top: -48rem;
+                background-size: 40rem;
+            }
+
+            @include a.respond(screen_767) {
+                background-size: 24rem;
+                width: 25rem;
+                height: 35rem;
+                top: -32rem;
+            }
+        }
+    }
+
+    &__events {
+        grid-row: 3 / 4;
+        display: grid;
+        grid-template-columns: 1fr 51%;
+        // grid-template-columns: 42% 51%;
+        column-gap: 7%;
+        margin-top: 27.5rem;
+        max-width: inherit;
+
+        @include a.respond(screen_1200) {
+            margin-top: 0;
+            padding-top: 8rem;
+            //padding-top: 30rem;
+        }
+
+        @include a.respond(screen_767) {
+            margin-top: 30rem; 
+        }
+
+        @include a.respond(screen_500) {
+            grid-template-columns: 1fr;
+            column-gap: 0;
+        }
+
+        &::before {
+            @include a.background-shape(2, blue);
+            background-size: 200rem;
+            width: 206rem;
+            height: 210rem;
+            top: -50rem;
+            left: -24.5rem;
+            transform: rotate(16deg);
+
+            @include a.respond(screen_1200) {
+                background-size: 163rem;
+                // width: 175rem;
+                width: 215rem;
+                transform: rotate(30deg);
+                left: -100%;
+            }
+
+            @include a.respond(screen_767) {
+                transform: rotate(55deg);
+            }
+
+            @include a.respond(screen_500) {
+                background-size: 95rem;
+                width: 100rem;
+                height: 110rem;
+                top: -25rem;
+                // transform: rotate(30deg);
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 69rem;
+            height: 82rem;
+            background: url(#{a.$theme-path}/img/shapes/path-calendar-blue.svg) center center no-repeat;
+            background-size: 58rem;
+            top: -28rem;
+            left: -13.5rem;
+
+            @include a.respond(screen_1200) {
+                width: 43rem;
+                height: 52rem;
+                background-size: 42rem;
+                top: 0;
+                right: -2rem;
+                left: initial;
+            }
+
+            @include a.respond(screen_900) {
+                background-size: 30rem;
+                top: -40rem;
+            }
+
+            @include a.respond(screen_500) {
+                width: 27rem;
+                height: 32rem;
+                background-size: 26rem;
+                top: -31rem;
+                right: 1rem;
+            }
+        }
+
+        .text-block {
+            grid-column: 2 / 2;
+            margin-bottom: 18rem;
+
+            @include a.respond(screen_1200) {
+                grid-column: 1 / -1;
+            }
+
+            @include a.respond(screen_900) {
+                margin-bottom: 8rem;
+            }
+        }
+
+        // .card {
+        //     &:nth-child(2),
+        //     &:nth-child(5) {
+        //         position: relative;
+        //         top: 13.5rem;
+
+        //         @include a.respond(screen_900) {
+        //             top: 8.5rem;
+        //         }
+        //         @include a.respond(screen_500) {
+        //             top: 0;
+        //         }
+        //     }
+        // }
+    }
+
+    &__blog {
+        // margin-top: 67rem;
+        margin-top: 50rem;
+        grid-row: 4 / 5;
+        @include a.section-with-card-slider;
+
+        @include a.respond(screen_1200) {
+            margin-top: 20rem;
+        }
+
+        @include a.respond(screen_900) {
+            margin-top: 45rem;
+            // grid-template-rows: auto;
+        }
+
+        @include a.respond(screen_500) {
+            margin-top: 1rem;
+        }
+
+        &::before {
+            @include a.background-shape(3, yellow);
+            background-size: 220rem;
+            width: 239rem;
+            height: 147rem;
+            top: -18rem;
+            left: -50.5rem;
+            transform: rotate(26deg);
+
+            @include a.respond(screen_1200) {
+                width: 255rem;
+            }
+
+            @include a.respond(screen_500) {
+                width: 224rem;
+                background-size: 190rem;
+                top: -16rem;
+            }
+        }
+
+        &::after {
+            @include a.path-illustration;
+            width: 84rem;
+            height: 70rem;
+            background: url(#{a.$theme-path}/img/shapes/path-blog-yellow.svg) center center no-repeat;
+            // background-size: cover;
+            top: -22rem;
+            right: 0;
+
+            @include a.respond(screen_1200) {
+                width: 62rem;
+                height: 52rem;
+                top: -35rem;
+                background-size: 75rem;
+                transform: rotate(10deg);
+                right: -5rem;
+            }
+
+            @include a.respond(screen_767) {
+                top: -50rem;
+                background-size: 60rem;
+            }
+
+            @include a.respond(screen_500) {
+                width: 40rem;
+                height: 35rem;
+                background-size: 50rem;
+                top: -15rem;
+                right: -11rem;
+            }
+        }
+    }
+}

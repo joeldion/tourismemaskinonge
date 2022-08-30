@@ -1,0 +1,142 @@
+@use '../abstracts' as a;
+
+.tm-social {
+    display: grid;
+    grid-template-columns: repeat(3, 3.6rem);
+    column-gap: 1rem;
+    list-style: none;
+    // margin-top: 3rem;
+
+    &--bg-blue-l a { background-color: a.$color-blue-light; }
+    &--bg-green-l a { background-color: a.$color-green-light; }
+    &--bg-yellow-l a { background-color: a.$color-yellow-light; }
+    &--bg-blue a { background-color: a.$color-blue-dark; }
+    &--bg-green a { background-color: a.$color-green-dark; }
+    &--bg-yellow a { background-color: a.$color-yellow-dark; }
+
+    &__facebook,
+    &__instagram,
+    &__question {
+        width: 3.6rem;
+        height: 3.6rem;
+        border-radius: 50%;
+        display: grid;
+        transition: all 0.2s;
+        background-position: center center;
+        background-size: 1rem;
+        background-repeat: no-repeat;
+
+        &:hover {
+            // background-color: a.$color-white;
+            filter: brightness(1.2);
+        }
+        
+        &::after {
+            content: '';
+        }
+
+    }
+
+    &__facebook {
+
+        &--white {
+            &::after {
+                @include a.icon(facebook, a.$color-white, 9px);
+            }
+        }
+
+        &--blue-l {
+            &::after {
+                @include a.icon(facebook, a.$color-blue-light, 9px);
+            }
+        }
+
+        &--green-l {
+            &::after {
+                @include a.icon(facebook, a.$color-green-light, 9px);
+            }
+        }
+
+        &--yellow-l {
+            &::after {
+                @include a.icon(facebook, a.$color-yellow-light, 9px);
+            }
+        }
+
+        &--blue {
+            &::after {
+                @include a.icon(facebook, a.$color-blue-dark, 9px);
+            }
+        }
+
+        &--green {
+            &::after {
+                @include a.icon(facebook, a.$color-green-dark, 9px);
+            }
+        }
+
+        &--yellow {
+            &::after {
+                @include a.icon(facebook, a.$color-yellow-dark, 9px);
+            }
+        }
+
+    }
+
+    &__instagram {
+
+        &--white {
+            &::after {
+                @include a.icon(instagram-2, a.$color-white, 2rem, 54% 58%);
+            }
+        }
+
+        &--blue {
+            &::after {
+                @include a.icon(instagram-2, a.$color-blue-dark, 2rem, 54% 58%);
+            }
+        }
+
+        &--green {
+            &::after {
+                @include a.icon(instagram-2, a.$color-green-dark, 2rem, 54% 58%);
+            }
+        }
+
+        &--yellow {
+            &::after {
+                @include a.icon(instagram-2, a.$color-yellow-dark, 2rem, 54% 58%);
+            }
+        }
+
+    }
+
+    &__question {
+
+        &--white {
+            &::after {
+                @include a.icon(question, a.$color-white, 1.8rem);
+            }
+        }
+
+        &--blue {
+            &::after {
+                @include a.icon(question, a.$color-blue-dark, 1.8rem);
+            }
+        }
+
+        &--green {
+            &::after {
+                @include a.icon(question, a.$color-green-dark, 1.8rem);
+            }
+        }
+
+        &--yellow {
+            &::after {
+                @include a.icon(question, a.$color-yellow-dark, 1.8rem);
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,229 @@
+@use '../abstracts' as a;
+
+.tm-side-box {
+    position: absolute;
+    margin: 20rem 0 0 8rem;
+    left: -8rem;
+    display: grid;
+    grid-template-columns: minmax(40rem, 58rem) minmax(40rem, 60rem);
+    column-gap: 5rem;
+    max-width: 90vw;
+
+    @include a.respond(screen_1200) {
+        grid-template-columns: minmax(30rem, 55rem);
+        grid-template-rows: 47rem 52rem;
+    }
+
+    @include a.respond(screen_900) {
+        margin: 20rem 0 0 5rem;
+    }
+
+    @include a.respond(screen_767) {
+        grid-template-rows: 40rem 52rem;
+        // margin: 15rem 0 0 5rem;
+        row-gap: 4rem;
+    }
+
+    &::before {
+        transform: rotate(-30deg);
+        background-size: 90rem;
+        width: 95rem;
+        height: 95rem;
+        position: absolute;
+        top: -40rem;
+        left: -25rem;
+
+        @include a.respond(screen_767) {
+            transform: rotate(-35deg);
+            background-size: 75rem;
+            width: 80rem;
+            height: 80rem;
+            top: -28rem;
+            left: -15rem;
+        }
+
+    }
+
+    &--large {
+
+        @include a.respond(screen_767) {
+            margin: 0;
+            left: 0;
+        }
+
+
+        &::before {
+            background-size: 90rem;
+            width: 95rem;
+            height: 105rem;
+            left: -22rem;
+
+            @include a.respond(screen_1200) {
+                background-size: 100rem;
+                width: 100rem;
+                height: 105rem;
+                left: -33rem;  
+            }
+
+            @include a.respond(screen_767) {
+                background-size: 75rem;
+                height: 75rem;
+                left: -30rem;
+                top: -25rem;
+            }
+
+            
+
+        }
+    }
+
+    &--right {
+        left: initial;
+        // right: 33rem;
+        grid-auto-flow: dense;
+        margin: 20rem 8rem 0 0;
+        column-gap: 10rem;
+
+        @include a.respond(screen_1200) {
+            right: -6rem;
+        }
+
+        @include a.respond(screen_900) {
+            margin: 20rem 5rem 0 0;
+        }
+
+        @include a.respond(screen_767) {
+            // margin: 15rem 5rem 0 0;
+            margin: inherit;
+            right: inherit;
+        }
+
+        &::before {
+            transform: scaleX(-1) rotate(-32deg);
+            left: initial;
+            right: -15rem;
+
+            @include a.respond(screen_1200) {
+                background-size: 100rem;
+                width: 100rem;
+                height: 105rem;
+                left: initial;  
+                right: -28rem;
+            }
+
+            @include a.respond(screen_767) {
+                background-size: 75rem;
+                height: 75rem;
+                top: -27rem;
+                right: -22rem;             
+            }
+
+        }
+
+        .text-block {
+            grid-column: 2;
+
+            @include a.respond(screen_1200) {
+                grid-column: 1;
+            }
+
+        }
+
+        .tm-side-box__map {
+
+            @include a.respond(screen_1200) {
+                left: initial;
+                right: 10rem;
+            }
+
+            @include a.respond(screen_767) {
+                right: initial;
+            }
+
+        }
+        
+    }
+
+    &--blue {
+        &::before {
+            @include a.background-shape(1, blue);
+        }
+    }
+
+    &--green {
+        &::before {
+            @include a.background-shape(1, green);
+        }
+    }
+
+    &--yellow {
+        &::before {
+            @include a.background-shape(1, yellow);
+        }
+    }
+
+    &__wrapper {
+        min-height: 80rem;
+        position: relative;
+
+        &--large {
+
+            @include a.respond(screen_1200) {
+                min-height: 120rem;
+
+                &:first-child {
+                    margin-top: 5rem;
+                }
+
+            }
+
+            @include a.respond(screen_767) {
+                min-height: 80rem;
+                margin-top: 25rem;
+
+                &:first-child {
+                    margin-top: 15rem;
+                    // margin-top: 30rem;
+                }
+
+            }
+
+        }
+        
+
+    }
+
+    &__content {
+        position: absolute;
+        width: 100%;
+        left: 8rem;
+
+        &--right {
+            left: initial;
+            // right: -8rem;
+        }
+
+        @include a.respond(screen_767) {
+            position: relative;
+            left: 0;
+        }
+
+    }
+
+    &__map {
+        background-color: a.$color-white;
+        border-radius: a.$tm-border-radius;
+        position: relative;
+
+        @include a.respond(screen_1200) {
+            left: 10rem;
+        }
+
+        @include a.respond(screen_767) {
+            left: initial;
+            max-height: 35rem;
+        }
+
+    }
+
+}

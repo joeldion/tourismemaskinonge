@@ -1,0 +1,18 @@
+@use '../abstracts' as a;
+
+.tm-directory {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5rem;
+    margin-top: 20rem;
+
+    @include a.respond(screen_1200) {
+        grid-template-columns: 1fr;
+
+        .text-block {
+            max-width: 100%;
+        }
+
+    }
+
+}

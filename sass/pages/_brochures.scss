@@ -1,0 +1,55 @@
+@use '../abstracts' as a;
+
+.tm-brochure {
+
+    &__title {
+        &::before {
+            @include a.background-shape(1, green);
+            transform: rotate(-50deg);
+            background-size: 215rem;
+            width: 220rem;
+            height: 220rem;
+            top: -60rem;
+            left: -44rem;
+
+            @include a.respond(screen_1440) {
+                background-size: 205rem;
+                width: 205rem;
+                height: 205rem;
+                top: -56rem;
+            }
+
+
+            @include a.respond(screen_900) {
+                background-size: 140rem;
+                width: 150rem;
+                height: 170rem;
+            }
+
+        }
+
+        &::after {
+            @include a.path-illustration;
+            width: 54rem;
+            height: 70rem;
+            background: url(#{a.$theme-path}/img/shapes/path-map-green.svg) center center no-repeat;
+            background-size: 52rem;
+            top: -15rem;
+            left: -5rem;
+
+            @include a.respond(screen_1200) {
+                background-size: 30rem;
+                width: 30rem;
+                height: 40rem;
+                top: -10rem;
+                right: -5rem;
+                left: initial;
+            }
+
+            @include a.respond(screen_900) {
+                display: none;
+            }
+        }
+    }
+
+}

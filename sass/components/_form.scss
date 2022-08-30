@@ -1,0 +1,33 @@
+@use '../abstracts' as a;
+
+.form {
+    &__input {
+        width: 100%;
+        height: 6.4rem;
+        border-radius: 3.2rem;
+        position: relative;
+        cursor: pointer;
+
+        &--yellow {
+            @include a.gradient-with-icon(a.$grad-yellow-left-right, a.$color-yellow-light, a.$color-yellow-dark, small);
+        }
+
+        &::after {
+            background: transparent url(a.$icon-greater) center center no-repeat;
+        }
+
+        input {
+            width: inherit;
+            height: inherit;
+            border: 0;
+            border-radius: inherit;
+            background-color: transparent;
+            padding: 0 3rem;
+            color: a.$color-white;
+            font-family: a.$font-secondary;
+            font-size: 2rem;
+            @include a.normal-text(3, 300);
+
+        }
+    }
+} 

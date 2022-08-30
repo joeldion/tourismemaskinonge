@@ -1,0 +1,31 @@
+@use '../abstracts' as a;
+
+.tm-404 {
+    &__title {
+        &::before {
+            @include a.background-shape(3-invert, blue);
+            transform: rotate(-3deg);
+            background-size: 205rem;
+            width: 212rem;
+            height: 205rem;
+            top: -54rem;
+            left: -44rem;
+
+            @include a.respond(screen_1440) {
+                background-size: 192rem;
+                width: 180rem;
+                height: 156rem;
+                top: -32rem;
+                left: -30rem;
+            }
+
+            @include a.respond(screen_1200) {
+                background-size: 150rem;
+                width: 180rem;
+                height: 156rem;
+                top: -45rem;
+                left: -38rem;
+            }
+        }
+    }
+}

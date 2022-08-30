@@ -1,0 +1,135 @@
+@use '../abstracts' as a;
+
+.tm-events {
+
+    &__title {
+
+        &::before {
+            @include a.background-shape(2, blue);            
+            transform: rotate(14deg);
+            background-size: 220rem;
+            // background-size: 205rem;
+            width: 230rem;
+            height: 240rem;
+            top: -35rem;
+            left: -75rem;
+            // width: 205rem;
+            // height: 215rem;
+            // top: -40rem;
+            // left: -47rem;
+
+            @include a.respond(screen_1200) {
+                background-size: 160rem;
+                width: 180rem;
+                height: 170rem;
+                // top: -40rem;
+                left: -47rem;
+            }
+
+            @include a.respond(screen_900) {
+                background-size: 135rem;
+                width: 140rem;
+                height: 140rem;
+                transform: rotate(22deg);
+                top: -30rem;
+            }
+
+        }
+
+        &::after {
+            @include a.path-illustration;
+            width: 66rem;
+            height: 76rem;
+            background: url(#{a.$theme-path}/img/shapes/path-calendar-blue.svg) center center no-repeat;
+            background-size: 64rem;
+            top: 19rem;
+            left: -10rem;
+
+            @include a.respond(screen_1200) {
+                background-size: 40rem;
+                top: 20rem;
+                left: -20rem;
+            }
+
+            @include a.respond(screen_900) {
+                background-size: 32rem;
+                top: 14rem;
+                left: initial;
+                right: -5rem;
+                width: 45rem;
+                height: 56rem;
+            }
+
+            @include a.respond(screen_767) {
+                top: 80rem;
+            }
+
+            @include a.respond(screen_500) {
+                display: none;  
+            }
+
+        }        
+
+    }
+
+    &__items {
+        margin: 10rem 0;
+    }
+
+    .text-block {
+        &--right {
+            @include a.respond(screen_900) {
+                margin-left: 0;
+            }
+        }
+    }
+
+}
+
+// Single Event
+.tm-event {
+
+    &__title {
+
+        &::before {
+            @include a.background-shape(1, green);
+            background-size: 190rem;
+            width: 199rem;
+            height: 185rem;
+            top: -62rem;
+            left: -99rem;
+            transform: rotate(-26deg);
+
+            @include a.respond(screen_1200) {
+                background-size: 130rem;
+                top: -70rem;
+                left: -80rem;
+                transform: rotate(-30deg);
+            }
+
+        }
+
+        &::after {
+            @include a.path-illustration;
+            width: 59rem;
+            height: 83rem;
+            background: url(#{a.$theme-path}/img/shapes/path-calendar-green.svg) center center no-repeat;
+            background-size: 58rem;
+            top: 40rem;
+            right: -15rem;
+
+            @include a.respond(screen_1200) {
+                background-size: 45rem;
+                top: 10rem;
+                right: -10rem;
+            }
+
+            @include a.respond(screen_900) {
+                display: none;
+            }
+
+        }
+    }
+
+}
+

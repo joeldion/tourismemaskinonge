@@ -1,0 +1,197 @@
+@use '../abstracts' as a;
+
+.tm-contact {
+    display: grid;
+    row-gap: 1.5rem;
+    margin: 5rem 0 2.5rem;
+    // margin-top: 5rem;
+    list-style: none;
+    padding-left: 0;
+
+    &--event {
+        margin: 3rem 0;
+        // margin-top: 3rem;
+        row-gap: 1rem;
+        grid-template-columns: min-content;
+
+        li:last-child {
+            margin-bottom: 0;
+        }
+
+    }
+
+    &__item {
+        // display: flex;
+        list-style: none;
+        display: grid;
+        // grid-template-columns: 2.8rem max-content;
+        grid-template-columns: 2.8rem 1fr;
+        // grid-template-rows: 2.8rem;
+        column-gap: 1.5rem;
+        // align-items: center;
+        margin-bottom: 0;
+        color: a.$color-white;
+
+        &::before {
+            content: '';
+            // background-position: center top;
+            background-position: center center;
+            background-repeat: no-repeat;
+            width: 2.8rem;
+            height: 2.8rem;
+            // height: 100%;
+        }
+    }
+
+    &__date {
+        &::before {
+            background-size: 2.4rem;
+        }
+        &--yellow {
+            &::before {
+                background-image: url(a.$icon-calendar-yellow);
+            }
+        }
+    }
+
+    &__time {
+        &::before {
+            background-size: 2.2rem;
+        }
+        &--yellow {
+            &::before {
+                background-image: url(a.$icon-clock-yellow);
+            }
+        }
+    }
+
+    &__location {
+        &::before {
+            background-size: 2rem;
+        }
+        &--yellow {
+            &::before {
+                background-image: url(a.$icon-marker-yellow);
+            }
+        }
+    }
+
+    &__address {
+        &--blue {
+            &::before {
+                background-image: url(a.$icon-home-blue);
+            }
+        }
+        &--green-d {
+            &::before {
+                background-image: url(a.$icon-home-green-d);
+            }
+        }
+        &--yellow {
+            &::before { 
+                background-image: url(a.$icon-home-yellow); 
+            }
+        }
+        &--yellow-d {
+            &::before { 
+                background-image: url(a.$icon-home-yellow-d); 
+            }
+        }
+    }
+
+    &__phone_1,
+    &__phone_2 {
+        &--blue {
+            &::before {
+                background-image: url(a.$icon-phone-blue);
+            }
+        }
+        &--green-d {
+            &::before {
+                background-image: url(a.$icon-phone-green-d);
+            }
+        }
+        &--yellow {
+            &::before {
+                background-image: url(a.$icon-phone-yellow);
+            }
+        }
+        &--yellow-d {
+            &::before {
+                background-image: url(a.$icon-phone-yellow-d);
+            }
+        }
+    }
+
+    &__email {
+        &--blue {
+            &::before {
+                background-image: url(a.$icon-email-blue);
+            }
+        }
+        &--yellow {
+            &::before {
+                background-image: url(a.$icon-email-yellow);
+            }
+        }
+        &--yellow-d {
+            &::before {
+                background-image: url(a.$icon-email-yellow-d);
+            }
+        }
+    }
+
+    &__website {
+        &--blue {
+            &::before {
+                background-image: url(a.$icon-website-blue);
+            }
+        }
+        &--yellow {
+            &::before {
+                background-image: url(a.$icon-website-yellow);
+            }
+        }
+        &--yellow-d {
+            &::before {
+                background-image: url(a.$icon-website-yellow-d);
+            }
+        }
+    }
+
+    &__facebook {
+        &--blue {
+            &::before {
+                background-image: url(a.$icon-facebook-blue);
+            }
+        }
+    }
+
+    &__instagram {
+        &--blue {
+            &::before {
+                background-image: url(a.$icon-instagram-blue);
+            }
+        }
+    }
+
+    &__link {
+        font-family: a.$font-secondary;
+        color: a.$color-white;
+        font-size: 2rem;
+        line-height: 2.6rem;
+        height: 100%;
+
+        &--dark {
+            color: a.$color-black;
+        }
+
+        &--green {
+            color: a.$color-green-dark;
+        }
+    }
+
+    &__gmap {
+        color: inherit;
+    }
+}
