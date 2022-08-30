@@ -19,11 +19,43 @@ function get_events_categories() {
 
     ?>
         <ul class="tm-search-small__categories">
-        <?php foreach ( $categories as $cat ): ?>
-            <li>
-                <a href="#" class="tm-search-small__category tm-cat" data-catid="<?php echo $cat->term_id;?>"><?php echo $cat->name; ?></a>
-            </li>
-        <?php endforeach; ?>
+        <?php 
+            foreach ( $categories as $cat ):
+
+                // Don't show category if it doesn't have upcoming events
+                $args = [
+                    'post_type'  =>  'tm_event',
+                    'status'     =>  'publish',
+                    'tax_query'  =>  [
+                                        'relation'  =>  'AND',
+                                        [
+                                            'taxonomy'  =>  'tm_event_category',
+                                            'field'     =>  'term_id',
+                                            'terms'     =>  $cat->term_id
+                                        ]                                        
+                                     ],
+                    'meta_query' =>  [
+                                        'relation'  =>  'AND',
+                                        [
+                                            'key'   =>  '_tm_event_end_date',
+                                            'value' =>  current_time( 'mysql' ),
+                                            'compare'   =>  '>',
+                                            'type'      =>  'DATETIME'
+                                        ],
+                                     ]
+                ];
+                $events = new WP_Query( $args );
+
+                if ( $events->have_posts() ):
+                ?>
+                    <li>
+                        <a href="#" class="tm-search-small__category tm-cat" data-catid="<?php echo $cat->term_id;?>"><?php echo $cat->name; ?></a>
+                    </li>            
+                <?php
+                endif;
+
+            endforeach; 
+        ?>
         </ul>
     <?php
 
