@@ -31,7 +31,7 @@ function get_post_contact_info( $post_type, $color_icon = '', $color_bg = '' ) {
             'email'         => esc_html( get_post_meta( $id, '_tm_attract_email', true ) ),
             'website'       => esc_url( get_post_meta( $id, '_tm_attract_website', true ) )
         ];
-        $full_address = $contact['address'] . ', ' . $contact['city'] . '&nbsp;(QC) ' . $contact['postal_code'];
+        $full_address = $contact['address'] . '&nbsp;<br>' . $contact['city'] . '&nbsp;(QC) ' . $contact['postal_code'];
     
         $social = [
             'facebook'  =>  esc_url( get_post_meta( $id, '_tm_attract_facebook', true ) ),
@@ -49,8 +49,10 @@ function get_post_contact_info( $post_type, $color_icon = '', $color_bg = '' ) {
     $passive_data = [ 'city', 'postal_code', 'gmap_url' ];
     $href_pattern = [ '(poste)', '/\-|\s+/' ]; // Phone
     $href_replace = [ ',', '' ];
-    $output_pattern = [ '/\-+/', '/\s+/' ];
-    $output_replace = [ '&#8209;', '&nbsp;' ];
+    $output_pattern = [ '/\-+/' ];
+    $output_replace = [ '&#8209;' ];
+    // $output_pattern = [ '/\-+/', '/\s+/' ];
+    // $output_replace = [ '&#8209;', '&nbsp;' ];
     
     // Contact output
     ?>

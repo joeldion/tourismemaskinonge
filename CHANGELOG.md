@@ -42,3 +42,7 @@ Version: 1.2.4
 
 1.2.4
 - Correction : la liste des catégories d'événements affichent les catégories vides
+
+1.2.5 
+- Correction : L'adresse ('tm-contact') qui dépasse la limite de l'écran à cause des espaces insécables (mobile)
+- L'adresse ('tm-contact') s'affiche maintenant sur deux lignes
