@@ -33,6 +33,14 @@ function tm_get_modal() {
                     <p><a href="https://hangartspublics.com" class="tm-modal__cta" target="_blank" rel="noopener" aria-label="HangARTS publics">En savoir plus</a></p>                
                 </div>
             </div>
+            <div class="tm-modal__item">
+                <img class="tm-modal__img" src="<?php echo TM_URL . '/img/logos/logo-escapade-mauricie-modal-1x.png'; ?>" srcset="<?php echo TM_URL . '/img/logos/logo-escapade-mauricie-modal-1x.png 1x, ' . TM_URL . '/img/logos/logo-escapade-mauricie-modal.png 2x'; ?>" alt="Escapade Mauricie">
+                <div class="tm-modal__desc">
+                    <h4 class="tm-modal__title tm-modal__title--secondary">Escapade Mauricie</h4>
+                    <p>Faites la tournée des artistes et producteurs confortablement assis en autobus au départ de Trois-Rivières.</p>
+                    <p><a href="https://www.escapademauricie.com/fr-ca/arts-et-tournee-gourmande-maskinonge" class="tm-modal__cta" target="_blank" rel="noopener" aria-label="Escapade Mauricie">En savoir plus</a></p>                
+                </div>
+            </div>
         </div>
     </div>
     <?php
