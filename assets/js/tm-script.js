@@ -366,14 +366,14 @@ backToTop.addEventListener("click", function(e) {
     const resultsCount = $('#results-count');
     const slide = $('#slide');
     const titleTag = $('.text-block__big');
-    let initialCat = listing.data('initial-cat');
+    let catID = listing.data('initial-cat');
     let page = 2;
     let firstQuery = true;
     let slideUrl = '';
 
-    function loadListing(category = initialCat, loadmore = false) {
+    function loadListing(category = catID, loadmore = false) {
 
-        if ( !loadmore ) {
+        if (!loadmore) {
             page = 1;
             if ( !firstQuery && filtersToggler !== null ) {
                 filtersToggler.click();  
@@ -422,8 +422,6 @@ backToTop.addEventListener("click", function(e) {
                 resultsCount.html(response.results_count);
                 slide.css('background-image', 'url(' + slideUrl + ')');
                 slide.data('image-id', response.cat_slide_id);
-                listing.attr('data-initial-cat', category);                
-                initialCat = category;
 
                 if ((!firstQuery && !loadmore)) {
                     let newUrl = tm_globals.base_url + '/' + catSlug + '/' + response.slug;
@@ -442,10 +440,8 @@ backToTop.addEventListener("click", function(e) {
 
     // Dynamic Category Change
     const tmCategories = $('.tm-cat');
-    let catID = 0;
     for (let i = 0; i < tmCategories.length; i++) {
         let cat = tmCategories[i];
-        // let catID = parseInt(cat.data('catid'));       
         cat.addEventListener('click', function(e) {
             e.preventDefault();
             selectedLocation = 0; // reset location
@@ -453,17 +449,14 @@ backToTop.addEventListener("click", function(e) {
             listing.addClass('hidden');
             loadListing(catID);
             loadFilters(catID);
-            $('#loadmore').attr('data-catid', catID);
-            // console.log('loadmore data-catid = ' + catID);
-            // console.log(catID);
         });
     }
 
     // Sort content 
     const locationFilter = $('#location-filter');
-    const searchSmall = $('.tm-search-small');
-    const textBlockBody = $('.text-block__body');
-    const dynamicCards = $('.cards--dynamic');
+    // const searchSmall = $('.tm-search-small');
+    // const textBlockBody = $('.text-block__body');
+    // const dynamicCards = $('.cards--dynamic');
     let selectedLocation;
 
     function loadFilters(category = initialCat) {
@@ -499,13 +492,9 @@ backToTop.addEventListener("click", function(e) {
     });
 
     // Load More
-    $('#loadmore').click( function (e) {
+    $('#loadmore').click( function(e) {
         e.preventDefault();
-        catID = $(this).data('catid');
-        // console.log('loadmore data-catid = ' + $(this).data('catid'));
-        // console.log('loadmore catID = ' + catID);
         loadListing(catID, true);
-        // console.log(catID);
     });
 
     // Loading animation
@@ -525,23 +514,6 @@ backToTop.addEventListener("click", function(e) {
             if (locationFilter.length > 0) loadFilters();
         });
     }
-
-    // Newsletter
-    /*
-    function newsletterSubmit(token) {
-        // newsletterSubmit.submit();
-
-    }
-    const newsletterSubmit = $('#mc-embedded-subscribe-form');
-    newsletterSubmit.on('click', function(e) {
-        e.preventDefault();
-        grecaptcha.ready(function() {
-            grecaptcha.execute(tm_globals.recaptcha_key, {action: 'submit'}).then(function(token) {
-                // ...
-            });
-        });
-    });
-    */
 
 })(jQuery);
 
