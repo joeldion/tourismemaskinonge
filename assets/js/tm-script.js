@@ -454,12 +454,12 @@ backToTop.addEventListener("click", function(e) {
 
     // Sort content 
     const locationFilter = $('#location-filter');
-    // const searchSmall = $('.tm-search-small');
-    // const textBlockBody = $('.text-block__body');
-    // const dynamicCards = $('.cards--dynamic');
+    const searchSmall = $('.tm-search-small');
+    const textBlockBody = $('.text-block__body');
+    const dynamicCards = $('.cards--dynamic');
     let selectedLocation;
 
-    function loadFilters(category = initialCat) {
+    function loadFilters(category = catID) {
         
         $.ajax({
             type: 'post',
@@ -487,8 +487,8 @@ backToTop.addEventListener("click", function(e) {
 
     locationFilter.on('change', function() {
         selectedLocation = $(this).val();       
-        loadListing();
-        loadFilters();
+        loadListing(catID);
+        loadFilters(catID);
     });
 
     // Load More
