@@ -1,0 +1,372 @@
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: _s 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
+"POT-Creation-Date: 2020-04-17T21:03:15+00:00\n"
+"PO-Revision-Date: 2022-09-13 17:02-0400\n"
+"Last-Translator: Joël Dion <joel.dion@mrc-maskinonge.qc.ca>\n"
+"Language-Team: \n"
+"Language: fr_CA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.1\n"
+"X-Domain: _s\n"
+
+# Admin: Accueil
+msgid "Home Page"
+msgstr "Page d'accueil"
+
+msgid "Home Page Settings"
+msgstr "Paramètres de la page d'accueil"
+
+msgid "Intro Text"
+msgstr "Texte d'introduction"
+
+msgid "Subtitle"
+msgstr "Sous-titre"
+
+msgid "Button Text"
+msgstr "Texte du bouton"
+
+msgid "Button Link"
+msgstr "Lien du bouton"
+
+msgctxt "Teasers name"
+msgid "Teaser"
+msgid_plural "Teasers"
+msgstr[0] "Aperçu"
+msgstr[1] "Aperçus"
+
+# Attraits
+msgctxt "Attraction name"
+msgid "Attraction"
+msgid_plural "Attractions"
+msgstr[0] "Attrait"
+msgstr[1] "Attraits"
+
+msgctxt "Attraction slug"
+msgid "attraction"
+msgid_plural "attractions"
+msgstr[0] "attrait"
+msgstr[1] "attraits"
+
+msgctxt "Attraction category slug"
+msgid "attraction-category"
+msgid_plural "attraction-categories"
+msgstr[0] "categorie-attraits"
+msgstr[1] "categories-attraits"
+
+msgctxt "Attraction category name"
+msgid "Attraction Category"
+msgid_plural "Attraction Categories"
+msgstr[0] "Catégorie d'attrait"
+msgstr[1] "Catégories d'attrait"
+
+msgid "Add new attraction"
+msgstr "Ajouter un nouvel attrait"
+
+msgid "Edit attraction"
+msgstr "Modifier l'attrait"
+
+msgid "New attraction"
+msgstr "Nouvel attrait"
+
+msgid "All attractions"
+msgstr "Tous les attraits"
+
+msgid "View attraction"
+msgstr "Voir l'attrait"
+
+msgid "Search attractions"
+msgstr "Rechercher parmi les attraits"
+
+msgid "No attractions found"
+msgstr "Aucun attrait trouvé"
+
+msgid "No attractions found in trash"
+msgstr "Aucun attrait trouvé dans la corbeille"
+
+msgid "Address"
+msgstr "Adresse"
+
+msgid "City"
+msgstr "Municipalité"
+
+msgid "Postal Code"
+msgstr "Code postal"
+
+msgid "Google Map URL"
+msgstr "Lien de la carte Google"
+
+msgid "Phone"
+msgstr "Téléphone"
+
+msgid "Email"
+msgstr "Courriel"
+
+msgid "Website"
+msgstr "Site web"
+
+msgid "Add New Attraction Category"
+msgstr "Ajouter une catégorie d'attrait"
+
+msgid "New Attraction Category"
+msgstr "Nouvelle catégorie d'attrait"
+
+msgid "Edit Attraction Category"
+msgstr "Modifier la catégorie d'attrait"
+
+msgid "All Attraction Categories"
+msgstr "Toutes les catégories d'attrait"
+
+msgid "Parent Attraction Category"
+msgstr "Catégorie d'attrait parente"
+
+msgid "Parent Attraction Category:"
+msgstr "Catégorie d'attrait parente:"
+
+msgid "View Attraction Category"
+msgstr "Voir la catégorie d'attrait"
+
+msgid "Update Attraction Category"
+msgstr "Mettre à jour la catégorie d'attrait"
+
+msgid "No Attraction Category found"
+msgstr "Aucune catégorie d'attrait n'a été trouvée"
+
+msgid "Business"
+msgstr "Affaires"
+
+msgid "Featured"
+msgstr "En vedette"
+
+# Événements
+msgctxt "Event name"
+msgid "Event"
+msgid_plural "Events"
+msgstr[0] "Événement"
+msgstr[1] "Événements"
+
+msgctxt "Event slug"
+msgid "event"
+msgid_plural "events"
+msgstr[0] "evenement"
+msgstr[1] "evenements"
+
+msgctxt "Event category slug"
+msgid "event-category"
+msgid_plural "event-categories"
+msgstr[0] "categorie-evenement"
+msgstr[1] "categories-evenements"
+
+msgctxt "Event category name"
+msgid "Event Category"
+msgid_plural "Event Categories"
+msgstr[0] "Catégorie d'événement"
+msgstr[1] "Catégories d'événement"
+
+msgid "Add Event"
+msgstr "Ajouter un événement"
+
+msgid "Edit Event"
+msgstr "Modifier l'événement"
+
+msgid "New Event"
+msgstr "Nouvel événement"
+
+msgid "All Events"
+msgstr "Tous les événements"
+
+msgid "View Event"
+msgstr "Voir l'événement"
+
+msgid "Search Events"
+msgstr "Rechercher parmi les événements"
+
+msgid "No Events found"
+msgstr "Aucun événement trouvé"
+
+msgid "No Events found in trash"
+msgstr "Aucun événement trouvé dans la corbeille"
+
+msgid "Event Categories"
+msgstr "Catégories d'événement"
+
+msgid "Event Category"
+msgstr "Catégorie d'événement"
+
+msgid "Add New Event Category"
+msgstr "Ajouter une nouvelle catégorie d'événement"
+
+msgid "New Event Category"
+msgstr "Nouvelle catégorie d'événement"
+
+msgid "Edit Event Category"
+msgstr "Modifier la catégorie d'événement"
+
+msgid "All Event Categories"
+msgstr "Toutes les catégories d'événement"
+
+msgid "Parent Event Category"
+msgstr "Catégorie d'événement parente"
+
+msgid "Parent Event Category:"
+msgstr "Catégorie d'événement parente :"
+
+msgid "View Event Category"
+msgstr "Voir la catégorie d'événement"
+
+msgid "Update Event Category"
+msgstr "Mettre à jour la catégorie d'événement"
+
+msgid "Search Event Categories"
+msgstr "Rechercher parmi les catégories d'événement"
+
+msgid "No Event Category found"
+msgstr "Aucune catégorie d'événement n'a été trouvée"
+
+msgid "Activity"
+msgstr "Activité"
+
+msgid "Start Date"
+msgstr "Date de début"
+
+msgid "End Date"
+msgstr "Date de fin"
+
+msgctxt "Event time"
+msgid "Time"
+msgstr "Heures"
+
+msgid "From:"
+msgstr "De :"
+
+msgid "To:"
+msgstr "À :"
+
+msgid "Upcoming Events"
+msgstr "Événements à venir"
+
+msgid "Publication Date"
+msgstr "Date de publication"
+
+msgid "Event Count"
+msgstr "Nombre d'événements"
+
+# Événements - Lieux
+msgctxt "Location name"
+msgid "Location"
+msgid_plural "Locations"
+msgstr[0] "Lieu"
+msgstr[1] "Lieux"
+
+msgctxt "Location slug"
+msgid "location"
+msgid_plural "locations"
+msgstr[0] "lieu"
+msgstr[1] "lieux"
+
+msgid "Add Location"
+msgstr "Ajouter un lieu"
+
+msgid "Edit Location"
+msgstr "Modifier le lieu"
+
+msgid "New Location"
+msgstr "Nouveau lieu"
+
+msgid "All Locations"
+msgstr "Tous les lieux"
+
+msgid "View Locations"
+msgstr "Voir les lieux"
+
+msgid "Search Locations"
+msgstr "Rechercher parmi les lieux"
+
+msgid "No Locations found"
+msgstr "Aucun lieu n'a été trouvé"
+
+msgid "No Locations found in trash"
+msgstr "Aucun lieu n'a été trouvé dans la corbeille"
+
+msgid "Locate"
+msgstr "Localiser"
+
+# Recherche
+msgid "Search"
+msgstr "Recherche"
+
+msgctxt "no results"
+msgid "No"
+msgstr "Aucun"
+
+msgctxt "results"
+msgid "result"
+msgid_plural "results"
+msgstr[0] "résultat"
+msgstr[1] "résultats"
+
+msgctxt "default search results"
+msgid "result for"
+msgid_plural "results for"
+msgstr[0] "résultat avec"
+msgstr[1] "résultats avec"
+
+msgctxt "posts search results"
+msgid "post with"
+msgid_plural "posts with"
+msgstr[0] "article avec"
+msgstr[1] "articles avec"
+
+msgctxt "events search results"
+msgid "event with"
+msgid_plural "events with"
+msgstr[0] "événement avec"
+msgstr[1] "événements avec"
+
+msgctxt "attractions search results"
+msgid "attraction with"
+msgid_plural "attractions with"
+msgstr[0] "attrait avec"
+msgstr[1] "attraits avec"
+
+# Blogue
+msgid "Blog"
+msgstr "Blogue"
+
+msgid "Share"
+msgstr "Partager"
+
+msgid "Also Read"
+msgstr "À lire également"
+
+# Messages
+msgid "We're sorry. This category is currently empty."
+msgstr "Nous sommes désolés. Cette catégorie est présentement vide."
+
+# Slider
+msgid "Big Image"
+msgstr "Grande image"
+
+# Divers
+msgid "Bullet List"
+msgstr "Liste à puces"
+
+msgid "Bullet"
+msgstr "Puce"
+
+msgid "Big Text"
+msgstr "Gros texte"
+
+msgid "Small Text"
+msgstr "Petit texte"
+
+msgid "Section: Featured Locations"
+msgstr "Section : Établissements mis de l'avant"
+
+msgid "Section: Other Locations"
+msgstr "Section : Autres établissements"

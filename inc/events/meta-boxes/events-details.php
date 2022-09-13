@@ -30,7 +30,6 @@ function tm_event_details_callback() {
     $end_date = esc_html( get_post_meta( $id, '_tm_event_end_date', true ) );
     $start_time = esc_html( get_post_meta( $id, '_tm_event_start_time', true ) );
     $end_time = esc_html( get_post_meta( $id, '_tm_event_end_time', true ) );
-    $category = esc_html( get_post_meta( $id, '_tm_event_category', true ) );
     $location_id = intval( get_post_meta( $id, '_tm_event_location_id', true ) );
     $phone = esc_html( get_post_meta( $id, '_tm_event_phone', true ) );
     $email = esc_html( get_post_meta( $id, '_tm_event_email', true ) );
@@ -95,21 +94,13 @@ function tm_event_details_callback() {
                 </th>
                 <td>
                     <select id="event-location" name="event-location">                        
-                        <option value="1" <?php selected( 1, $location_id, true ); ?>><?php esc_html_e( 'None' ); ?></option>
-                        <?php /*
-                        <?php while ( $location_list->have_posts() ): $location_list->the_post(); ?>
-                            <option value="<?php the_ID(); ?>" <?php selected( get_the_ID(), $location_id, true ); ?>>
-                                <?php the_title(); ?>
-                            </option>
-                        <?php endwhile; ?>
-                        */ ?>
+                        <option value="0" <?php selected( 1, $location_id, true ); ?>><?php esc_html_e( 'None' ); ?></option>
                         <?php for ( $i = 0; $i < count( $location_list->posts ); $i++ ): $loc = $location_list->posts; ?>
                                 <option value="<?php echo $loc[$i]->ID; ?>" <?php selected( $loc[$i]->ID, $location_id, true ); ?>>
                                     <?php echo $loc[$i]->post_title; ?>
                                 </option>
                         <?php endfor; ?>
                     </select>
-                    
                 </td>
             </tr>
        
@@ -192,28 +183,38 @@ function tm_event_details_meta_box_save( $post_id ) {
 
     $data_start_date = sanitize_text_field( $_POST[ 'event-start-date' ] );
     $data_end_date = sanitize_text_field( $_POST[ 'event-end-date' ] );
-    // End date is start date if empty
-    if ( $data_end_date === '' ) $data_end_date = $data_start_date; 
+    if ( $data_end_date === '' ) $data_end_date = $data_start_date; // End date is start date if empty
     $data_start_time = sanitize_text_field( $_POST[ 'event-start-time' ] );
     $data_end_time = sanitize_text_field( $_POST[ 'event-end-time' ] );
-    $data_location_id = sanitize_text_field( $_POST[ 'event-location' ] );
-    $data_city = esc_html( get_post_meta( $data_location_id, '_tm_event_location_city', true ) );
     $data_phone = sanitize_text_field( $_POST[ 'event-phone' ] );
     $data_email = sanitize_text_field( $_POST[ 'event-email' ] );
     $data_website = sanitize_text_field( $_POST[ 'event-website' ] );
     $data_facebook = sanitize_text_field( $_POST[ 'event-facebook' ] );
     $data_instagram = sanitize_text_field( $_POST[ 'event-instagram' ] );
+    $data_location_id = intval( $_POST[ 'event-location' ] );
+    $has_location = $data_location_id > 0 ? true : false; // Location id 0 = no location
+    if ( $has_location ) { // No city if no location
+        $data_city = esc_html( get_post_meta( $data_location_id, '_tm_event_location_city', true ) );
+    }
 
     update_post_meta( $post_id, '_tm_event_start_date', $data_start_date );
     update_post_meta( $post_id, '_tm_event_end_date', $data_end_date );
     update_post_meta( $post_id, '_tm_event_start_time', $data_start_time );
     update_post_meta( $post_id, '_tm_event_end_time', $data_end_time );
-    update_post_meta( $post_id, '_tm_event_location_id', $data_location_id );
-    update_post_meta( $post_id, '_tm_event_city', $data_city );
     update_post_meta( $post_id, '_tm_event_phone', $data_phone );
     update_post_meta( $post_id, '_tm_event_email', $data_email );
     update_post_meta( $post_id, '_tm_event_website', $data_website );
     update_post_meta( $post_id, '_tm_event_facebook', $data_facebook );
     update_post_meta( $post_id, '_tm_event_instagram', $data_instagram );
+
+    if ( $has_location ) {
+        // Update meta data if event has location
+        update_post_meta( $post_id, '_tm_event_location_id', $data_location_id );
+        update_post_meta( $post_id, '_tm_event_city', $data_city );
+    } else {
+        // Delete meta data if event doesn't have any location
+        delete_post_meta( $post_id, '_tm_event_location_id' );
+        delete_post_meta( $post_id, '_tm_event_city' );
+    }
 
 }

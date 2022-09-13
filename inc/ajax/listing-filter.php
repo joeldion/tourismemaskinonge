@@ -24,7 +24,16 @@ function tm_listing_filter() {
     $args = [
         'post_type'     =>  'tm_event',
         'post_status'   =>  'publish',        
-        'tax_query'     =>  $tax_query
+        'tax_query'     =>  $tax_query,
+        'meta_query'    =>  [
+                                'relation'  =>  'AND',
+                                [
+                                    'key'     =>  '_tm_event_end_date',
+                                    'value'   =>  current_time( 'mysql' ),
+                                    'compare' =>  '>',
+                                    'type'    =>  'DATETIME'
+                                ],
+                            ]
     ];
 
     $events = new WP_Query( $args );
@@ -32,6 +41,7 @@ function tm_listing_filter() {
     if ( $events->have_posts() ):
     
         while ( $events->have_posts() ): $events->the_post();
+            
             $city = get_post_meta( get_the_ID(), '_tm_event_city', true );
             if ( !in_array( $city, $cities ) && !empty( $city ) ) {
                 array_push( $cities, $city );
