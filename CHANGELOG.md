@@ -48,6 +48,8 @@ Version: 1.3.0
 - L'adresse ('tm-contact') s'affiche maintenant sur deux lignes
 
 1.3.0 
+- Correction : les mauvais attraits s'affichent lorsqu'on change de catégorie en AJAX et qu'on clique sur "En voir plus"
+- Correction : des municipalités sans événement figurent dans les filtres
 - Ajout de colonnes classables de dates de début/fin et de lieu dans la liste des événements (admin)
 - Ajout de la liste des événements dans la meta box des lieux d'événements (admin)
 - Ajout d'une colonne "Nombre d'événements" dans la liste des lieux d'événements (admin)
