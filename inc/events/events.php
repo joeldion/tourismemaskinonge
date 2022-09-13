@@ -1,7 +1,10 @@
 <?php
 
 require_once( TM_DIR . '/inc/events/meta-boxes/events-details.php' );
-require_once( TM_DIR . '/inc/events/meta-boxes/events-locations-details.php' );
+require_once( TM_DIR . '/inc/events/meta-boxes/events-location-details.php' );
+require_once( TM_DIR . '/inc/events/columns/events-dates.php' );
+require_once( TM_DIR . '/inc/events/columns/events-location.php' );
+require_once( TM_DIR . '/inc/events/columns/locations-event-count.php' );
 require_once( TM_DIR . '/inc/events/functions/events-listing.php' );
 require_once( TM_DIR . '/inc/events/functions/events-contact.php' );
 require_once( TM_DIR . '/inc/events/functions/events-categories.php' );
@@ -98,30 +101,3 @@ function tm_event_location_cpt() {
 
 }
 add_action( 'init', 'tm_event_location_cpt', 9 );
-
-/*
-** Event Admin Column
-*/
-function tm_event_admin_column_head( $columns ) {
-
-    $columns[ 'tm_event_start_date' ] = esc_html__( 'Event Start Date', TM_DOMAIN );
-    return $columns;
-
-}
-add_filter( 'manage_tm_event_posts_columns', 'tm_event_admin_column_head' );
-
-function tm_event_admin_column_content( $column_name, $post_id ) {
-
-    if ( $column_name == 'tm_event_start_date' ) {
-
-        $start_date = strtotime( get_post_meta( $post_id, '_tm_event_start_date', true ) );
-        $start_time = esc_html( get_post_meta( $post_id, '_tm_event_start_time', true ) );
-
-        if ( $start_date !== '' ) {
-            echo date_i18n( 'l j F Y', $start_date ) . ', ' . $start_time;
-        }
-
-    }
-
-}
-add_action( 'manage_tm_event_posts_custom_column', 'tm_event_admin_column_content', 1, 2 );

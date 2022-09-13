@@ -1,6 +1,6 @@
 Thème MRC de Maskinongé
 Description : Site officiel de Tourisme Maskinongé | Développement et intégration : Joël Dion | Graphisme : Cognitif
-Version: 1.2.4
+Version: 1.3.0
 
 1.0.1
 - Changement line-height sub-menu
@@ -46,3 +46,9 @@ Version: 1.2.4
 1.2.5 
 - Correction : L'adresse ('tm-contact') qui dépasse la limite de l'écran à cause des espaces insécables (mobile)
 - L'adresse ('tm-contact') s'affiche maintenant sur deux lignes
+
+1.3.0 
+- Ajout de colonnes classables de dates de début/fin et de lieu dans la liste des événements (admin)
+- Ajout de la liste des événements dans la meta box des lieux d'événements (admin)
+- Ajout d'une colonne "Nombre d'événements" dans la liste des lieux d'événements (admin)
+- Meta donnée "event count" retirée

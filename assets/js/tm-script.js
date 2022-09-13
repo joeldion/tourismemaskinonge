@@ -454,12 +454,14 @@ backToTop.addEventListener("click", function(e) {
 
     // Sort content 
     const locationFilter = $('#location-filter');
-    const searchSmall = $('.tm-search-small');
-    const textBlockBody = $('.text-block__body');
-    const dynamicCards = $('.cards--dynamic');
-    let selectedLocation;
+    // const searchSmall = $('.tm-search-small');
+    // const textBlockBody = $('.text-block__body');
+    // const dynamicCards = $('.cards--dynamic');
+    let selectedLocation;    
 
     function loadFilters(category = catID) {
+
+        console.log('catID = ' + catID);
         
         $.ajax({
             type: 'post',
