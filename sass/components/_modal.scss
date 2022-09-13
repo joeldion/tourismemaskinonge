@@ -116,7 +116,7 @@
     &__content {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 2rem;
+        grid-gap: 4rem 2rem;
         margin-top: 5rem;
     }
 
