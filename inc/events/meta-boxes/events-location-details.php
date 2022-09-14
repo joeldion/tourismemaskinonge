@@ -41,8 +41,8 @@ function tm_location_details_callback() {
                                     'value' =>  $post->ID
                                 ],
                                 [
-                                    'key'   =>  '_tm_event_end_date',
-                                    'value' =>  current_time( 'mysql' ),
+                                    'key'       =>  '_tm_event_end_date',
+                                    'value'     =>  current_time( 'mysql' ),
                                     'compare'   =>  '>',
                                     'type'      =>  'DATETIME'
                                 ],
@@ -130,22 +130,25 @@ function tm_location_details_callback() {
                     <?php 
                         if ( $events->have_posts() ) {    
 
+                            $output = '';
                             while ( $events->have_posts() ): $events->the_post();                          
                                 $id = get_the_ID();
                                 $start_date = strtotime( get_post_meta( $id, '_tm_event_start_date', true ) );
-                                $start_time = esc_html( get_post_meta( $id, '_tm_event_start_time', true ) );
-                                $output  = '<p>';
+                                $end_date = strtotime( get_post_meta( $id, '_tm_event_end_date', true ) );
+                                $output .= '<p>';
                                 $output .= '<a href="' . get_edit_post_link() . '">'. get_the_title() .'</a>';
                                 $output .= ' - ' . date_i18n( 'l j F Y', $start_date );
-                                if ( !empty( $start_time ) ) $output .= ', ' . $start_time;
-                                $output .= '</p>';                                                 
+                                if ( !empty( $end_date ) && $start_date !== $end_date ) {
+                                    $output .= ' | ' . date_i18n( 'l j F Y', $end_date );
+                                } 
+                                $output .= '</p>';
                             endwhile;
 
                         } else {
                             $output = '<p>' . esc_html__( 'None' ) . '</p>';
                         }                        
                         echo $output;
-                    ?>                        
+                    ?>    
                 </td>
             </tr>
         </tbody>
