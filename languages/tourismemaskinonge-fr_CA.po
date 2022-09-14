@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
 "POT-Creation-Date: 2020-04-17T21:03:15+00:00\n"
-"PO-Revision-Date: 2022-09-13 17:02-0400\n"
+"PO-Revision-Date: 2022-09-14 10:23-0400\n"
 "Last-Translator: Joël Dion <joel.dion@mrc-maskinonge.qc.ca>\n"
 "Language-Team: \n"
 "Language: fr_CA\n"
@@ -255,6 +255,9 @@ msgstr "Date de publication"
 
 msgid "Event Count"
 msgstr "Nombre d'événements"
+
+msgid "Information:"
+msgstr "Information :"
 
 # Événements - Lieux
 msgctxt "Location name"
