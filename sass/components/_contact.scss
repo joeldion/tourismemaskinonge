@@ -12,7 +12,7 @@
         margin: 3rem 0;
         // margin-top: 3rem;
         row-gap: 1rem;
-        grid-template-columns: min-content;
+        grid-template-columns: max-content;
 
         li:last-child {
             margin-bottom: 0;
