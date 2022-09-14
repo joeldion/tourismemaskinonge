@@ -202,7 +202,7 @@
         }
         &--heart {
             @include a.icon(heart);
-            display: none; //temp
+            display: none;
         }
         &--question {
             @include a.icon(question);
