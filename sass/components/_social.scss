@@ -39,6 +39,12 @@
 
     &__facebook {
 
+        &--footer {
+            &::after {
+                @include a.icon(facebook, a.$color-white, 12px, left center);
+            }
+        }
+
         &--white {
             &::after {
                 @include a.icon(facebook, a.$color-white, 9px);
@@ -84,6 +90,12 @@
     }
 
     &__instagram {
+
+        &--footer {
+            &::after {
+                @include a.icon(instagram-2, a.$color-white, 24px, left center);
+            }
+        }
 
         &--white {
             &::after {

@@ -22,9 +22,9 @@
                             <a class="address__email" href="mailto:info@tourismemaskinonge.com">info@tourismemaskinonge.com</a>
                         </address>
                         <div class="footer__social tm-social">
-                            <a href="https://www.facebook.com/tourismemaskinonge" target="_blank" title="Facebook" class="tm-social__facebook tm-social__facebook--yellow-green" rel="noopener"></a>
-                            <a href="https://www.instagram.com/tourismemaskinonge" target="_blank" title="Instagram" class="tm-social__instagram tm-social__instagram--yellow-green" rel="noopener"></a>
-                            <a href="<?php echo get_site_url() . '/nous-joindre'; ?>" target="_blank" title="Nous joindre" class="tm-social__question tm-social__question--yellow-green"></a>
+                            <a href="https://www.facebook.com/tourismemaskinonge" target="_blank" title="Facebook" class="tm-social__facebook tm-social__facebook--footer" rel="noopener"></a>
+                            <a href="https://www.instagram.com/tourismemaskinonge" target="_blank" title="Instagram" class="tm-social__instagram  tm-social__instagram--footer" rel="noopener"></a>
+                            <?php /*<a href="<?php echo get_site_url() . '/nous-joindre'; ?>" target="_blank" title="Nous joindre" class="tm-social__question tm-social__question--white"></a>*/ ?>
                         </div> 
                         <!-- <div class="footer__social">
                             <a href="#" class="footer__icon footer__icon--facebook"></a>
