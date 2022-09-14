@@ -3,7 +3,7 @@
  * Filter: Text
  */
 
-// add_filter( 'the_title', 'tm_text_format', 10, 2 );
+add_filter( 'the_title', 'tm_text_format', 10, 2 );
 add_filter( 'the_content', 'tm_text_format', 10, 2 );
 add_filter( 'the_excerpt', 'tm_text_format', 10, 2 );
 
