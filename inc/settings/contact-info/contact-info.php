@@ -24,8 +24,7 @@ function tm_contact_info_settings() {
     ?>
         <div id="contact-info-settings">
             <form action="options.php" method="post">
-                <?php
-                    submit_button();
+                <?php                   
                     do_settings_sections( 'contact-info-settings-page' );
                     settings_fields( 'contact-info-settings' );
                     submit_button();
@@ -36,7 +35,5 @@ function tm_contact_info_settings() {
 }
 
 function tm_contact_info_admin_init() {
-
-    require_once( TM_DIR . '/inc/contact-info/contact-info-settings.php' );
-
+    require_once( __DIR__ . '/contact-info-fields.php' );
 }
