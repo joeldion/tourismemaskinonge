@@ -17,7 +17,7 @@ function tm_home_admin_menu() {
         'home-settings-page',
         'tm_home_settings',
         'dashicons-admin-home',
-        3
+        4
     );
 
 }

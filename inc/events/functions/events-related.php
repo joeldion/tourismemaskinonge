@@ -41,7 +41,7 @@ function get_related_events( $event_id, $category, $location_id = null ) {
     <?php if ( $related_events->have_posts() ): ?>
 
     <div class="tm-post__related tm-post__related--bottom">
-        <h4 class="small-header small-header--blue">À voir également</h4>
+        <h4 class="small-header small-header--blue"><?php esc_html_e( 'See also', TM_DOMAIN ); ?></h4>
         <div class="cards cards--xlarge">            
             <div class="cards__listing cards__listing--xlarge">
                 <?php 

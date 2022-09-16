@@ -197,6 +197,7 @@ require_once( TM_INC . 'components/modal.php');
 require_once( TM_INC . 'events/events.php');
 require_once( TM_INC . 'filters/filters.php');
 require_once( TM_INC . 'home/home.php');
+require_once( TM_INC . 'contact-info/contact-info.php');
 require_once( TM_INC . 'meta-boxes/meta-boxes.php');
 require_once( TM_INC . 'search/search.php');
 require_once( TM_INC . 'shortcodes/shortcodes.php');
