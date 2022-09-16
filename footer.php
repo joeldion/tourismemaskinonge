@@ -12,11 +12,11 @@
                     
                     <div class="footer__item footer__item--contact">
                         <h3 class="footer__title"><?php esc_html_e( 'Contact Info', TM_DOMAIN ); ?></h3>
-                        <p class="footer__text"><?php esc_html_e( get_option( 'contact_info_subtitle_1' ) ); ?></p>
-                        <p class="footer__text"><?php esc_html_e( get_option( 'contact_info_subtitle_2' ) ); ?></p>
-                        <p class="footer__text"><?php esc_html_e( get_option( 'contact_info_subtitle_3' ) ); ?></p>
+                        <p class="footer__text"><?php esc_html_e( get_option( 'footer_contact_subtitle_1' ) ); ?></p>
+                        <p class="footer__text"><?php esc_html_e( get_option( 'footer_contact_subtitle_2' ) ); ?></p>
+                        <p class="footer__text"><?php esc_html_e( get_option( 'footer_contact_subtitle_3' ) ); ?></p>
                         <address class="address">
-                            <p class="address__title"><?php esc_html_e( get_option( 'contact_info_location_name' ) ); ?></p>
+                            <p class="address__title"><?php esc_html_e( get_option( 'footer_contact_location_name' ) ); ?></p>
                             <a class="address__street" href="https://goo.gl/maps/iE9VGvLfFJMSEfb7A" target="_blank" rel="noopener">
                                 <?php esc_html_e( get_option( 'contact_info_address' ) ); ?>
                             </a>
@@ -34,15 +34,15 @@
                     </div>
 
                     <div class="footer__item footer__item--blog">
-                        <h3 class="footer__title"><?php esc_html_e( 'Blog', TM_DOMAIN ); ?></h3>
+                        <h3 class="footer__title"><?php esc_html_e( get_option( 'footer_blog_title' ) ); ?></h3>
                         <div class="footer__blog">
                             <?php echo get_latest_blog_posts_footer( get_the_ID() ); ?>
                         </div>
                     </div>    
                     
                     <div class="footer__item footer__item--newsletter">
-                        <h3 class="footer__title"><?php esc_html_e( 'Newsletter' ); ?></h3>
-                        <p class="footer__text">Abonnez-vous à notre infolettre et recevez gratuitement nos brochures et documents touristique.</p>   
+                        <h3 class="footer__title"><?php esc_html_e( get_option( 'footer_newsletter_title' ) ); ?></h3>
+                        <p class="footer__text"><?php esc_html_e( get_option( 'footer_newsletter_desc' ) ); ?></p>   
                         <div id="mc_embed_signup" class="newsletter">                            
                             <form action="https://quebec.us3.list-manage.com/subscribe/post?u=4cb2a8156baa181aada61ceaa&amp;id=8c73675c6b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form form" class="validate" target="_blank" novalidate>
                                 <div class="form__input form__input--yellow">
