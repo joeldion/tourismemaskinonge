@@ -2,46 +2,46 @@
             <div class="footer__wrapper">
                 <div class="footer__logos">
                     <div class="footer__logo">
-                        <a href="https://mrcmaskinonge.ca/" target="_blank" rel="noopener"><img src="<?php echo TM_URL; ?>/img/logos/logo-mrc-maskinonge-blanc.svg" alt="Logo - MRC de Maskinongé"></a>
+                        <a href="https://mrcmaskinonge.ca/" target="_blank" rel="noopener" aria-label="MRC de Maskinongé"><img src="<?php echo TM_URL; ?>/img/logos/logo-mrc-maskinonge-blanc.svg" alt="Logo - MRC de Maskinongé"></a>
                     </div>
                     <div class="footer__logo">
-                    <a href="https://www.facebook.com/culturemaskinonge/" target="_blank" rel="noopener"><img src="<?php echo TM_URL; ?>/img/logos/logo-culture-maskinonge-blanc.svg" alt="Logo - Culture Maskinongé"></a>
+                    <a href="https://www.facebook.com/culturemaskinonge/" target="_blank" rel="noopener" aria-label="Culture Maskinongé"><img src="<?php echo TM_URL; ?>/img/logos/logo-culture-maskinonge-blanc.svg" alt="Logo - Culture Maskinongé"></a>
                     </div>
                 </div>
                 <div class="footer__content">
                     
                     <div class="footer__item footer__item--contact">
-                        <h3 class="footer__title">Coordonnées</h3>
-                        <p class="footer__text">Tourisme Maskinongé</p>
-                        <p class="footer__text">Bureau d'information touristique</p>
-                        <p class="footer__text">Boutique terroir et artisans</p>
+                        <h3 class="footer__title"><?php esc_html_e( 'Contact Info', TM_DOMAIN ); ?></h3>
+                        <p class="footer__text"><?php esc_html_e( get_option( 'contact_info_subtitle_1' ) ); ?></p>
+                        <p class="footer__text"><?php esc_html_e( get_option( 'contact_info_subtitle_2' ) ); ?></p>
+                        <p class="footer__text"><?php esc_html_e( get_option( 'contact_info_subtitle_3' ) ); ?></p>
                         <address class="address">
-                            <p class="address__title">Aire de service de la Baie-de-Maskinongé</p>
-                            <a class="address__street" href="https://goo.gl/maps/iE9VGvLfFJMSEfb7A" target="_blank" rel="noopener">161, autoroute 40 Est, Maskinongé (QC) J0K 1N0</a>
-                            <a class="address__phone" href="tel:+18772272413">1 877-227-2413</a>
-                            <a class="address__email" href="mailto:info@tourismemaskinonge.com">info@tourismemaskinonge.com</a>
-                        </address>
-                        <div class="footer__social tm-social">
-                            <a href="https://www.facebook.com/tourismemaskinonge" target="_blank" title="Facebook" class="tm-social__facebook tm-social__facebook--footer" rel="noopener"></a>
-                            <a href="https://www.instagram.com/tourismemaskinonge" target="_blank" title="Instagram" class="tm-social__instagram  tm-social__instagram--footer" rel="noopener"></a>
-                            <?php /*<a href="<?php echo get_site_url() . '/nous-joindre'; ?>" target="_blank" title="Nous joindre" class="tm-social__question tm-social__question--white"></a>*/ ?>
-                        </div> 
-                        <!-- <div class="footer__social">
-                            <a href="#" class="footer__icon footer__icon--facebook"></a>
-                            <a href="#" class="footer__icon footer__icon--instagram"></a>
-                            <a href="#" class="footer__icon footer__icon--question"></a>
-                        </div> -->
+                            <p class="address__title"><?php esc_html_e( get_option( 'contact_info_location_name' ) ); ?></p>
+                            <a class="address__street" href="https://goo.gl/maps/iE9VGvLfFJMSEfb7A" target="_blank" rel="noopener">
+                                <?php esc_html_e( get_option( 'contact_info_address' ) ); ?>
+                            </a>
+                            <a class="address__phone" href="<?php tm_format_phone( get_option( 'contact_info_phone' ), 'href' ); ?>">
+                                <?php esc_html_e( get_option( 'contact_info_phone' ) ); ?>
+                            </a>
+                            <a class="address__email" href="mailto:<?php esc_html_e( get_option( 'contact_info_email' ) ); ?>">
+                                <?php esc_html_e( get_option( 'contact_info_email' ) ); ?>
+                            </a>
+                        </address>                       
+                        <div class="footer__social tm-social tm-social--bg-yellow">
+                            <a href="<?php echo esc_url( get_option( 'contact_info_facebook' ) ); ?>" target="_blank" title="Facebook" class="tm-social__facebook tm-social__facebook--green" rel="noopener"></a>
+                            <a href="<?php echo esc_url( get_option( 'contact_info_instagram' ) ); ?>" target="_blank" title="Instagram" class="tm-social__instagram tm-social__instagram--green" rel="noopener"></a>
+                        </div>                       
                     </div>
 
                     <div class="footer__item footer__item--blog">
-                        <h3 class="footer__title">Blogue</h3>
+                        <h3 class="footer__title"><?php esc_html_e( 'Blog', TM_DOMAIN ); ?></h3>
                         <div class="footer__blog">
                             <?php echo get_latest_blog_posts_footer( get_the_ID() ); ?>
                         </div>
                     </div>    
                     
                     <div class="footer__item footer__item--newsletter">
-                        <h3 class="footer__title">Infolettre</h3>
+                        <h3 class="footer__title"><?php esc_html_e( 'Newsletter' ); ?></h3>
                         <p class="footer__text">Abonnez-vous à notre infolettre et recevez gratuitement nos brochures et documents touristique.</p>   
                         <div id="mc_embed_signup" class="newsletter">                            
                             <form action="https://quebec.us3.list-manage.com/subscribe/post?u=4cb2a8156baa181aada61ceaa&amp;id=8c73675c6b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form form" class="validate" target="_blank" novalidate>

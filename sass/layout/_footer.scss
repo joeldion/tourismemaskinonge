@@ -275,7 +275,7 @@
 
     &__title {
         @include a.normal-text(3, 600);
-        margin: 3rem 0;
+        margin: 3rem 0 1.5rem;
     }
 
     &__street,

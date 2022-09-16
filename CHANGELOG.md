@@ -54,3 +54,8 @@ Version: 1.3.0
 - Ajout de la liste des événements dans la meta box des lieux d'événements (admin)
 - Ajout d'une colonne "Nombre d'événements" dans la liste des lieux d'événements (admin)
 - Meta donnée "event count" retirée
+
+1.4.0 
+- Correction : les icônes des médias sociaux ne s'affichent dans le footer + changements mineurs de style
+- Le contenu du footer est maintenant éditable excepté les deux derniers articles gu Blogue qui est automatisé
+- Ajout de plusieurs chaînes de caractères dans le fichier de localization (tourismemaskinonge-fr_CA.po)

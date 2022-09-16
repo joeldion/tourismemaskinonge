@@ -10,7 +10,7 @@ function get_post_contact_info( $post_type, $color_icon = '', $color_bg = '' ) {
     if ( $post_type === 'tm_event' ) {
         
         $contact = [
-            'phone_1'     =>  esc_html( get_post_meta( $id, '_tm_event_phone', true ) ),
+            'phone_1'   =>  esc_html( get_post_meta( $id, '_tm_event_phone', true ) ),
             'email'     =>  esc_html( get_post_meta( $id, '_tm_event_email', true ) ),
             'website'   =>  esc_url( get_post_meta( $id, '_tm_event_website', true ) )
         ];

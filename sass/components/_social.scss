@@ -39,51 +39,45 @@
 
     &__facebook {
 
-        &--footer {
-            &::after {
-                @include a.icon(facebook, a.$color-white, 12px, left center);
-            }
-        }
-
         &--white {
             &::after {
-                @include a.icon(facebook, a.$color-white, 9px);
+                @include a.icon(facebook, a.$color-white, 1rem);
             }
         }
 
         &--blue-l {
             &::after {
-                @include a.icon(facebook, a.$color-blue-light, 9px);
+                @include a.icon(facebook, a.$color-blue-light, 1rem);
             }
         }
 
         &--green-l {
             &::after {
-                @include a.icon(facebook, a.$color-green-light, 9px);
+                @include a.icon(facebook, a.$color-green-light, 1rem);
             }
         }
 
         &--yellow-l {
             &::after {
-                @include a.icon(facebook, a.$color-yellow-light, 9px);
+                @include a.icon(facebook, a.$color-yellow-light, 1rem);
             }
         }
 
         &--blue {
             &::after {
-                @include a.icon(facebook, a.$color-blue-dark, 9px);
+                @include a.icon(facebook, a.$color-blue-dark, 1rem);
             }
         }
 
         &--green {
             &::after {
-                @include a.icon(facebook, a.$color-green-dark, 9px);
+                @include a.icon(facebook, a.$color-green-dark, 1rem);
             }
         }
 
         &--yellow {
             &::after {
-                @include a.icon(facebook, a.$color-yellow-dark, 9px);
+                @include a.icon(facebook, a.$color-yellow-dark, 1rem);
             }
         }
 
@@ -91,33 +85,27 @@
 
     &__instagram {
 
-        &--footer {
-            &::after {
-                @include a.icon(instagram-2, a.$color-white, 24px, left center);
-            }
-        }
-
         &--white {
             &::after {
-                @include a.icon(instagram-2, a.$color-white, 2rem, 54% 58%);
+                @include a.icon(instagram-2, a.$color-white, 2.2rem, 8px 8px);
             }
         }
 
         &--blue {
             &::after {
-                @include a.icon(instagram-2, a.$color-blue-dark, 2rem, 54% 58%);
+                @include a.icon(instagram-2, a.$color-blue-dark, 2.2rem, 8px 8px);
             }
         }
 
         &--green {
             &::after {
-                @include a.icon(instagram-2, a.$color-green-dark, 2rem, 54% 58%);
+                @include a.icon(instagram-2, a.$color-green-dark, 2.2rem, 8px 8px);
             }
         }
 
         &--yellow {
             &::after {
-                @include a.icon(instagram-2, a.$color-yellow-dark, 2rem, 54% 58%);
+                @include a.icon(instagram-2, a.$color-yellow-dark, 2.2rem, 8px 8px);
             }
         }
 
