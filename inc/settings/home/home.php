@@ -40,19 +40,13 @@ function tm_home_settings() {
 }
 
 function tm_home_settings_slider_init() {
-
-    require_once( TM_DIR . '/inc/home/home-slider.php' );
-
+    require_once( __DIR__ . '/home-slider.php' );
 }
 
 function tm_home_settings_intro_init() {
-
-    require_once( TM_DIR . '/inc/home/home-intro.php' );
-
+    require_once( __DIR__ . '/home-intro.php' );
 }
 
 function tm_home_settings_teasers_init() {
-
-    require_once( TM_DIR . '/inc/home/home-teasers.php' );
-
+    require_once( __DIR__ . '/home-teasers.php' );
 }
