@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
 "POT-Creation-Date: 2020-04-17T21:03:15+00:00\n"
-"PO-Revision-Date: 2022-09-16 14:21-0400\n"
+"PO-Revision-Date: 2022-09-19 11:00-0400\n"
 "Last-Translator: Joël Dion <joel.dion@mrc-maskinonge.qc.ca>\n"
 "Language-Team: \n"
 "Language: fr_CA\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 3.1.1\n"
 "X-Domain: _s\n"
 
 # Admin: Accueil
@@ -43,6 +43,9 @@ msgstr[1] "Aperçus"
 # Admin: Coordonnées
 msgid "Contact Info"
 msgstr "Coordonnées"
+
+msgid "Contact Page"
+msgstr "Page de contact"
 
 # Admin: Pied de page
 msgid "Location name"
@@ -320,8 +323,13 @@ msgid "Locate"
 msgstr "Localiser"
 
 # Recherche
+msgctxt "Search noun"
 msgid "Search"
 msgstr "Recherche"
+
+msgctxt "Search verb"
+msgid "Search"
+msgstr "Rechercher"
 
 msgctxt "no results"
 msgid "No"

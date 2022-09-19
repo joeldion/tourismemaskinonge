@@ -62,6 +62,16 @@ add_settings_field(
 );
 register_setting( 'contact-info-settings', 'contact_info_instagram' );
 
+// Contact page
+add_settings_field(
+    'contact_info_page',
+    '<span class="dashicons dashicons-admin-page"></span>&nbsp;' . esc_html__( 'Contact Page', TM_DOMAIN ),
+    'contact_info_page_markup',
+    'contact-info-settings-page',
+    'contact-info-settings-section'
+);
+register_setting( 'contact-info-settings', 'contact_info_page' );
+
 function contact_info_settings_section_callback() {}
 
 function contact_info_address_markup() {
@@ -100,6 +110,37 @@ function contact_info_instagram_markup() {
 
     ?>
        <input type="url" size="80" maxlength="200" name="contact_info_instagram" value="<?php echo esc_url( get_option( 'contact_info_instagram' ) ); ?>">
+    <?php
+
+}
+
+function contact_info_page_markup() {
+
+    $contact_page = intval( get_option( 'contact_info_page' ) );
+    $args = [
+        'sort_order'   => 'ASC',
+        'sort_column'  => 'post_title',
+        'hierarchical' => 1,
+        'child_of'     => 0,
+        'parent'       => -1,
+        'offset'       => 0,
+        'post_type'    => 'page',
+        'post_status'  => 'publish'
+    ];
+    $pages = get_pages( $args );
+
+    ?>
+        <select name="contact_info_page">
+        <?php
+            foreach ( $pages as $page ) {
+                ?>
+                <option value="<?php echo $page->ID; ?>" <?php echo selected( $page->ID, $contact_page  ); ?>>
+                    <?php echo $page->post_title; ?>
+                </option>
+                <?php
+            }
+        ?>
+    </select>
     <?php
 
 }

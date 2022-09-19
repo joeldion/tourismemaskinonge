@@ -60,11 +60,14 @@
                         wp_nav_menu($args);
                     ?>
                     <div class="nav__icons">
-                        <a class="nav__icon nav__icon--search" id="search-toggler" aria-label="Rechercher" href="#"></a>
-                        <a class="nav__icon nav__icon--heart" aria-label="Coups de coeur" href="#"></a>                        
-                        <a class="nav__icon nav__icon--facebook hidden" aria-label="Facebook" href="https://www.facebook.com/tourismemaskinonge" target="_label"></a>
-                        <a class="nav__icon nav__icon--instagram hidden" aria-label="Instagram" href="https://www.instagram.com/tourismemaskinonge" target="_label"></a>
-                        <a class="nav__icon nav__icon--question" aria-label="Nous joindre" href="<?php echo get_site_url(); ?>/nous-joindre"></a>
+                        <a class="nav__icon nav__icon--search" id="search-toggler" aria-label="<?php echo esc_html_x( 'Search', 'Search verb', TM_DOMAIN ); ?>" href="#"></a>
+                        <?php /* <a class="nav__icon nav__icon--heart" aria-label="Coups de coeur" href="#"></a> */ ?>                    
+                        <a class="nav__icon nav__icon--facebook hidden" aria-label="Facebook" href="<?php echo esc_url( get_option( 'contact_info_facebook' ) ); ?>" target="_label"></a>
+                        <a class="nav__icon nav__icon--instagram hidden" aria-label="Instagram" href="<?php echo esc_url( get_option( 'contact_info_instagram' ) ); ?>" target="_label"></a>
+                        <a class="nav__icon nav__icon--question" 
+                           aria-label="<?php echo get_the_title( get_option( 'contact_info_page' ) ); ?>" 
+                           href="<?php echo tm_remove_base_url( get_permalink( get_option( 'contact_info_page' ) ) ); ?>">
+                        </a>
                     </div>
                     
                 </div>
