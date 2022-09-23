@@ -32,7 +32,6 @@ get_header();
             </picture>
             <div class="tm-post__content text">
                 <?php the_content(); ?>    
-                <h5><?php esc_html_e( 'Information:', TM_DOMAIN ); ?></h5>           
                 <?php echo get_post_contact_info( 'tm_event', 'blue', 'white' ); ?>            
             </div>              
             <?php echo get_related_events( $id, $categories[0] ); ?>            
