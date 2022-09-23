@@ -18,6 +18,9 @@ function get_post_contact_info( $post_type, $color_icon = '', $color_bg = '' ) {
             'facebook'  =>  esc_url( get_post_meta( $id, '_tm_event_facebook', true ) ),
             'instagram' =>  esc_url( get_post_meta( $id, '_tm_event_instagram', true ) )
         ];
+        $contact = array_filter( $contact ); // remove keys with empty values
+        $social = array_filter( $social );
+        $no_contact_info = ( empty( $contact ) && empty( $social ) ) ? true : false;
 
     } else if ( $post_type === 'attraction' ) {
 
@@ -55,6 +58,11 @@ function get_post_contact_info( $post_type, $color_icon = '', $color_bg = '' ) {
     // $output_replace = [ '&#8209;', '&nbsp;' ];
     
     // Contact output
+    if ( $post_type === 'tm_event' && !$no_contact_info ) {
+        ?>
+        <h5><?php esc_html_e( 'Information:', TM_DOMAIN ); ?></h5>
+        <?php
+    }
     ?>
     <ul class="tm-contact<?php echo ( $post_type === 'tm_event' ) ? ' tm-contact--event' : ''; ?>">
     <?php 
