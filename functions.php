@@ -24,7 +24,7 @@ defined( 'TM_INC' ) or define( 'TM_INC', get_template_directory() . '/inc/' );
 // Theme Directory URL
 defined( 'TM_URL' ) or define( 'TM_URL', get_template_directory_uri() );
 // Theme Version
-defined( 'TM_VERSION' ) or define( 'TM_VERSION', '1.4.2' );
+defined( 'TM_VERSION' ) or define( 'TM_VERSION', '1.4.3' );
 
 // Slides number
 defined( 'TM_SLIDES_COUNT' ) or define( 'TM_SLIDES_COUNT', 4 );
@@ -180,7 +180,6 @@ require_once( TM_INC . 'get-single-contact-info.php');
 require_once( TM_INC . 'image-sizes.php');
 require_once( TM_INC . 'login.php');
 require_once( TM_INC . 'remove-base-url.php');
-// require_once( TM_INC . 'page-subtitle.php');
 require_once( TM_INC . 'template-body-class.php');
 require_once( TM_INC . 'trim-text.php');
 
@@ -196,8 +195,6 @@ require_once( TM_INC . 'components/btn-load-more.php');
 require_once( TM_INC . 'components/modal.php');
 require_once( TM_INC . 'events/events.php');
 require_once( TM_INC . 'filters/filters.php');
-// require_once( TM_INC . 'home/home.php');
-// require_once( TM_INC . 'contact-info/contact-info.php');
 require_once( TM_INC . 'settings/settings.php');
 require_once( TM_INC . 'meta-boxes/meta-boxes.php');
 require_once( TM_INC . 'search/search.php');
