@@ -31,10 +31,11 @@
             }
 
             // Show modal on new session
-            if ( !$_SESSION['tm-modal-202209'] ) {
-                $_SESSION['tm-modal-202209'] = true;
-                echo tm_get_modal();
-            }
+            // if ( !$_SESSION['tm-modal-202209'] ) {
+            //     $_SESSION['tm-modal-202209'] = true;
+            //     echo tm_get_modal();
+            // }
+            echo tm_get_modal();
             // if ( current_user_can('administrator') ) {
             //     echo tm_get_modal();
             // }
