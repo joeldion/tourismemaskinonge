@@ -118,12 +118,23 @@
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 4rem 2rem;
         margin-top: 5rem;
+
+        &--single {
+            justify-content: center;
+            grid-template-columns: minmax(min-content, 85rem);
+        }
+
     }
 
     &__item {
         display: grid;
         grid-template-columns: 20rem 1fr;
         grid-gap: 1rem;
+
+        &--single {
+            grid-template-columns: 30rem 1fr;
+        }
+
 
         @include a.respond(screen_1200) {            
             grid-template-columns: 17rem 1fr;
