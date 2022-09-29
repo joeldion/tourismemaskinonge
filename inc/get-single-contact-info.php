@@ -63,74 +63,76 @@ function get_post_contact_info( $post_type, $color_icon = '', $color_bg = '' ) {
         <h5><?php esc_html_e( 'Information:', TM_DOMAIN ); ?></h5>
         <?php
     }
-    ?>
-    <ul class="tm-contact<?php echo ( $post_type === 'tm_event' ) ? ' tm-contact--event' : ''; ?>">
-    <?php 
-        foreach ( $contact as $key => $data ):
 
-            if ( !empty( $data ) && !in_array( $key, $passive_data ) ):
+    if ( !empty($contact) ): // Check if event has contact info
+        ?>
+        <ul class="tm-contact<?php echo ( $post_type === 'tm_event' ) ? ' tm-contact--event' : ''; ?>">
+        <?php 
+            foreach ( $contact as $key => $data ):
 
-                switch ( $key ) {
+                if ( !empty( $data ) && !in_array( $key, $passive_data ) ):
 
-                    case 'address':
-                        $href = $gmap_url;
-                        $output = $full_address;
-                        $aria_label = esc_html__( 'Address', TM_DOMAIN );
-                        break;    
-                    case 'phone_1': 
-                    case 'phone_2':
-                        $href = 'tel:+1' . preg_replace( $href_pattern, $href_replace, $data ); 
-                        $output = $data;
-                        $aria_label = esc_html__( 'Phone', TM_DOMAIN );
-                        break;
-                    case 'email':
-                        $href = 'mailto:' . $data;
-                        $output = $post_type === 'attraction' ? 'Écrivez-nous' : esc_html__( 'Email', TM_DOMAIN );
-                        $aria_label = esc_html__( 'Email' );
-                        break;                
-                    case 'website':
-                        $href = $data;
-                        $output = parse_url( $data )['host'];
-                        $aria_label = esc_html__( 'Website' );                  
-                        break;
-                    case 'facebook':
-                    case 'instagram':
-                        $href = $data;
-                        //$output = esc_html__( ucfirst( $key ), TM_DOMAIN );
-                        $aria_label = ucfirst( $key );
-                        break;                
-                    default:
-                        $href = $data;
-                        $output = $data;
+                    switch ( $key ) {
 
-                }
-                $output = preg_replace( $output_pattern, $output_replace, $output );
+                        case 'address':
+                            $href = $gmap_url;
+                            $output = $full_address;
+                            $aria_label = esc_html__( 'Address', TM_DOMAIN );
+                            break;    
+                        case 'phone_1': 
+                        case 'phone_2':
+                            $href = 'tel:+1' . preg_replace( $href_pattern, $href_replace, $data ); 
+                            $output = $data;
+                            $aria_label = esc_html__( 'Phone', TM_DOMAIN );
+                            break;
+                        case 'email':
+                            $href = 'mailto:' . $data;
+                            $output = $post_type === 'attraction' ? 'Écrivez-nous' : esc_html__( 'Email', TM_DOMAIN );
+                            $aria_label = esc_html__( 'Email' );
+                            break;                
+                        case 'website':
+                            $href = $data;
+                            $output = parse_url( $data )['host'];
+                            $aria_label = esc_html__( 'Website' );                  
+                            break;
+                        case 'facebook':
+                        case 'instagram':
+                            $href = $data;
+                            //$output = esc_html__( ucfirst( $key ), TM_DOMAIN );
+                            $aria_label = ucfirst( $key );
+                            break;                
+                        default:
+                            $href = $data;
+                            $output = $data;
 
-                // Default icon color = blue
-                if ( empty( $color_icon ) ) $color_icon = 'blue';                  
-                // Default background color = white
-                if ( empty( $color_bg ) ) $color_bg = 'blue';               
-                
-                $classes = 'tm-contact__item tm-contact__' . $key . ' tm-contact__' . $key . '--' . $color_icon;
-            ?>
-                <li class="<?php echo $classes; ?>">
-                    <a class="tm-contact__link<?php echo ( $post_type === 'tm_event' ) ? ' tm-contact__link--dark' : '';?>" 
-                       href="<?php echo $href; ?>" 
-                       target="_blank" 
-                       aria-label="<?php echo $aria_label; ?>" 
-                       rel="noopener">
-                       <?php echo $output; ?>
-                    </a>
-                </li>
-            <?php
+                    }
+                    $output = preg_replace( $output_pattern, $output_replace, $output );
 
-            endif;
+                    // Default icon color = blue
+                    if ( empty( $color_icon ) ) $color_icon = 'blue';                  
+                    // Default background color = white
+                    if ( empty( $color_bg ) ) $color_bg = 'blue';               
+                    
+                    $classes = 'tm-contact__item tm-contact__' . $key . ' tm-contact__' . $key . '--' . $color_icon;
+                ?>
+                    <li class="<?php echo $classes; ?>">
+                        <a class="tm-contact__link<?php echo ( $post_type === 'tm_event' ) ? ' tm-contact__link--dark' : '';?>" 
+                        href="<?php echo $href; ?>" 
+                        target="_blank" 
+                        aria-label="<?php echo $aria_label; ?>" 
+                        rel="noopener">
+                        <?php echo $output; ?>
+                        </a>
+                    </li>
+                <?php
 
-        endforeach;
-    ?>
-    </ul>
-    <?php
-  
+                endif;
+
+            endforeach;
+        ?>
+        </ul>
+        <?php
+    endif;
 
     // Social output
     if ( !empty( $social['facebook'] ) || !empty( $social['instagram'] ) ):
