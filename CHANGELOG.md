@@ -1,6 +1,6 @@
 Thème MRC de Maskinongé
 Description : Site officiel de Tourisme Maskinongé | Développement et intégration : Joël Dion | Graphisme : Cognitif
-Version: 1.3.0
+Version: 1.4.5
 
 1.0.1
 - Changement line-height sub-menu
@@ -59,3 +59,11 @@ Version: 1.3.0
 - Correction : les icônes des médias sociaux ne s'affichent dans le footer + changements mineurs de style
 - Le contenu du footer est maintenant éditable excepté les deux derniers articles gu Blogue qui est automatisé
 - Ajout de plusieurs chaînes de caractères dans le fichier de localization (tourismemaskinonge-fr_CA.po)
+
+1.4.5
+- Fix: footer social icons not showing
+- Minor changes to footer icons style
+- Footer content is now editable in admin except for the automated latests posts (blog)
+- Added strings to localization file (tourismemaskinonge-fr_CA.po)
+- Added contact page selector to Contact Info admin settings
+- Nav icons links are now taken from Contact Info admin settings
