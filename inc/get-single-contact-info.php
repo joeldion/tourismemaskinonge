@@ -54,8 +54,6 @@ function get_post_contact_info( $post_type, $color_icon = '', $color_bg = '' ) {
     $href_replace = [ ',', '' ];
     $output_pattern = [ '/\-+/' ];
     $output_replace = [ '&#8209;' ];
-    // $output_pattern = [ '/\-+/', '/\s+/' ];
-    // $output_replace = [ '&#8209;', '&nbsp;' ];
     
     // Contact output
     if ( $post_type === 'tm_event' && !$no_contact_info ) {
