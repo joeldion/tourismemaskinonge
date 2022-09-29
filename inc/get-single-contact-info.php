@@ -53,7 +53,7 @@ function get_post_contact_info( $post_type, $color_icon = '', $color_bg = '' ) {
     $href_pattern = [ '(poste)', '/\-|\s+/' ]; // Phone
     $href_replace = [ ',', '' ];
     $output_pattern = [ '/\-+/' ];
-    $output_replace = [ '&#8209;' ];
+    $output_replace = [ '&#8209;' ]; 
     
     // Contact output
     if ( $post_type === 'tm_event' && !$no_contact_info ) {
