@@ -61,9 +61,13 @@ Version: 1.4.5
 - Ajout de plusieurs chaînes de caractères dans le fichier de localization (tourismemaskinonge-fr_CA.po)
 
 1.4.5
+- Added cron job to unpublish past events
+- Fix: Event 'Information' label showing when all fields are empty
 - Fix: footer social icons not showing
 - Minor changes to footer icons style
 - Footer content is now editable in admin except for the automated latests posts (blog)
 - Added strings to localization file (tourismemaskinonge-fr_CA.po)
 - Added contact page selector to Contact Info admin settings
 - Nav icons links are now taken from Contact Info admin settings
+- Added redirection to draft posts + localization of 404 page
+- Minor bug fixes
