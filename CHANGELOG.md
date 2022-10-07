@@ -1,6 +1,6 @@
 Thème MRC de Maskinongé
 Description : Site officiel de Tourisme Maskinongé | Développement et intégration : Joël Dion | Graphisme : Cognitif
-Version: 1.4.5
+Version: 1.4.6
 
 1.0.1
 - Changement line-height sub-menu
@@ -71,3 +71,6 @@ Version: 1.4.5
 - Nav icons links are now taken from Contact Info admin settings
 - Added redirection to draft posts + localization of 404 page
 - Minor bug fixes
+
+1.4.6 
+- Added 1 day before unpublishing past events
