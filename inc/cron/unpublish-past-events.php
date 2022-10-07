@@ -7,14 +7,16 @@ date_default_timezone_set('America/New_York');
 
 require_once( '/var/www/html/tourismemaskinonge/wp-load.php' );
 
-// Unpublish expired events
+/* 
+ * Unpublish events the day after their end date 
+ */
 $args = [
     'post_type'     =>  'tm_event',
     'post_status'   =>  'publish',
     'meta_query'    =>  [
                             [
                                 'key'       =>  '_tm_event_end_date',
-                                'value'     =>  current_time( 'mysql' ),
+                                'value'     =>  current_time( 'mysql' ) + 86400, // Tomorrow
                                 'compare'   =>  '<',
                                 'type'      =>  'DATETIME'
                             ]
