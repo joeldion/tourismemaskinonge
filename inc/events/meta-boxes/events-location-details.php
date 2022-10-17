@@ -108,16 +108,18 @@ function tm_location_details_callback() {
                     $google_query  = str_replace( ' ', '+', $address );
                     $google_query .= '+' . $city;
                     $google_query .= '+' . str_replace( ' ', '+', $postal_code );
+                    $google_url = !empty( $gmap ) ? $gmap : '//google.com/maps/place/' . $google_query;
                     ?>
                     <tr valign="top">
                         <td>
                             <span class="dashicons dashicons-location"></span>
-                            <a href="//google.com/maps/place/<?php echo $google_query; ?>" target="_blank">
+                            <a href="<?php echo $google_url; ?>" target="_blank">
                                 <?php esc_html_e( 'Locate', TM_DOMAIN ); ?>
                             </a>
                         </td>
                     </tr>
                     <?php
+                    
                 }
             ?>
             <tr valign="top">

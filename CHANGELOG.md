@@ -74,3 +74,6 @@ Version: 1.4.6
 
 1.4.6 
 - Added 1 day before unpublishing past events
+
+1.4.7
+- Fix: Event location "Locate" link not using Google Maps URL (admin)
