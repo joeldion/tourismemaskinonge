@@ -1,64 +1,64 @@
 Thème MRC de Maskinongé
 Description : Site officiel de Tourisme Maskinongé | Développement et intégration : Joël Dion | Graphisme : Cognitif
-Version: 1.4.6
+Version: 1.4.8
 
 1.0.1
-- Changement line-height sub-menu
-- Ordre des articles du blogue à l'accueil
+- Changed style of sub-menu
+- Changed order of blog post on home page
 
 1.0.2
-- Correction : Événements apparentés qui apparaissent sans être publiés 
+- Fix: related events appear when unpublished
 
 1.0.3 
-- Ajout du paramètre d'URL "mode" pour un accès plus rapide à la carte des attraits
+- Added URL "mode" parameter for faster access to attraction map
 
 1.0.4
-- Correction : Coordonnées (lat, lng) des attraits qui ne sont plus générées en admin
+- Fix: attraction coordinates (lat, lng) are not generated in site admin
 
 1.0.5
-- Changement de la mise en page du menu principal pour les éléments sans enfants (liste horizontale)
+- Changed layout of main menu
 
 1.0.6
-- Correction : bug visuel du texte qui embarque sur la forme jaune (fiche d'attrait)
+- Fix: text overlapping background shape on single attraction page 
 
 1.0.7
-- Les événements à plusieurs dates sont désormais affichés selon leur date de début au lieu de leur date de fin
+- Events with multiple dates are now sorted according to their start date instead of their end date
 
 1.0.9
-- Changement de l'image du teaser "dormir"
+- Changed background image for teaser ("dormir")
 
 1.1.5
-- Ajout d'un popup (modal) temporaire
+- Added temporary modal
 
 1.2.1
-- Ajout d'un template par défaut (page.php)
-- Modification de l'apparence du texte en gras ("font-weight: 500")
+- Added default template (page.php)
+- Changed style of bold text
 
 1.2.2
-- Changement de style aux éléments <sup> ("line-height: 0")
+- Minor style change to "<sup>" elements
 
 1.2.3
-- "tm-script.js" utilise maintenant la version du Thème sur le site public au lieu du timestamp
+- Fix: "tm-script.js" using current timestamp instead of Theme version on public site 
 
 1.2.4
-- Correction : la liste des catégories d'événements affichent les catégories vides
+- Fix: empty event category listing (event-categories.php)
 
 1.2.5 
-- Correction : L'adresse ('tm-contact') qui dépasse la limite de l'écran à cause des espaces insécables (mobile)
-- L'adresse ('tm-contact') s'affiche maintenant sur deux lignes
+- Fix: Attraction contact address overlapping mobile screen
+- "tm-contact" address is now displayed on 2 lines
 
 1.3.0 
-- Correction : les mauvais attraits s'affichent lorsqu'on change de catégorie en AJAX et qu'on clique sur "En voir plus"
-- Correction : des municipalités sans événement figurent dans les filtres
-- Ajout de colonnes classables de dates de début/fin et de lieu dans la liste des événements (admin)
-- Ajout de la liste des événements dans la meta box des lieux d'événements (admin)
-- Ajout d'une colonne "Nombre d'événements" dans la liste des lieux d'événements (admin)
-- Meta donnée "event count" retirée
+- Fix: wrong attractions show up when switching categories using AJAX and clicking on "Load more" button
+- Fix: Cities without events in the location filter
+- Added sortable Start/End Date and Location columns to events (admin)
+- Added event list to location meta box (admin)
+- Added "Event Count" column in location list (admin)
+- Removed event count from location meta data
 
 1.4.0 
-- Correction : les icônes des médias sociaux ne s'affichent dans le footer + changements mineurs de style
-- Le contenu du footer est maintenant éditable excepté les deux derniers articles gu Blogue qui est automatisé
-- Ajout de plusieurs chaînes de caractères dans le fichier de localization (tourismemaskinonge-fr_CA.po)
+- Fix: social icons don't appear in footer + minor style changes
+- Footer content is now editable except the last 2 blog posts which appear automaticaly
+- Multiple strings added to localization (tourismemaskinonge-fr_CA.po)
 
 1.4.5
 - Added cron job to unpublish past events
@@ -77,3 +77,6 @@ Version: 1.4.6
 
 1.4.7
 - Fix: Event location "Locate" link not using Google Maps URL (admin)
+
+1.4.8 
+- Fix: Card titles show stripped "&nbsp;" 

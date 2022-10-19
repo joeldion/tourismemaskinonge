@@ -18,7 +18,7 @@ class TMCard {
         $this->size = $size;
         $this->is_search = $is_search;
         $this->is_business = $is_business;
-        $this->title = get_the_title( $this->id );
+        $this->title = str_replace( '&nbsp;', ' ', get_the_title( $this->id ) );
         $this->max_char = $this->size === 'small' ? 40 : 50;
         $this->image_size = $this->size === 'xlarge' ? 'tm-post' : 'tm-card';
         $this->image_url = get_the_post_thumbnail_url( $this->id, $this->image_size );
