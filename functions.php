@@ -24,7 +24,7 @@ defined( 'TM_INC' ) or define( 'TM_INC', get_template_directory() . '/inc/' );
 // Theme Directory URL
 defined( 'TM_URL' ) or define( 'TM_URL', get_template_directory_uri() );
 // Theme Version
-defined( 'TM_VERSION' ) or define( 'TM_VERSION', '1.4.8' );
+defined( 'TM_VERSION' ) or define( 'TM_VERSION', '1.4.9' );
 
 // Slides number
 defined( 'TM_SLIDES_COUNT' ) or define( 'TM_SLIDES_COUNT', 4 );

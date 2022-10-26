@@ -34,7 +34,7 @@ wp_reset_query();
     <section class="tm-search__title section">
 
         <div class="text-block">
-            <h1 class="text-block__small text-block__small--yellow-l"><?php esc_html_e( 'Search', TM_DOMAIN ); ?></h1>
+            <h1 class="text-block__small text-block__small--yellow-l"><?php echo esc_html_x( 'Search', 'Search noun', TM_DOMAIN ); ?></h1>
             <h2 class="text-block__big text-block__big--yellow-d">
                 <?php echo $count . '&nbsp;' . esc_html( $results_text ); ?> «&nbsp;<?php echo wp_trim_words( get_search_query(), 5, '...' ); ?>&nbsp;»
             </h2>
