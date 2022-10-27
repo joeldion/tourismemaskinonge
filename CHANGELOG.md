@@ -83,3 +83,6 @@ Version: 1.4.9
 
 1.4.9
 - Fix: Translation of 'Search' not showing on search results page
+
+1.4.10
+- Fix: Single event not showing main category

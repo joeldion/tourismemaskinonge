@@ -10,7 +10,7 @@ get_header();
 
     <section class="tm-event__title tm-event__title--single section">
         <div class="text-block">
-            <h2 class="text-block__small text-block__small--yellow-l"><?php echo get_single_event_categories( $id ); ?></h2>
+            <h2 class="text-block__small text-block__small--yellow-l"><?php echo get_event_main_category( $id ); ?></h2>
             <h1 class="text-block__big text-block__big--yellow-d"><?php the_title(); ?></h3>
             <?php echo get_event_info(); ?>
             <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_the_permalink(); ?>" id="facebook-share" class="btn btn--yellow btn--facebook"><?php esc_html_e( 'Share', TM_DOMAIN ); ?></a>
