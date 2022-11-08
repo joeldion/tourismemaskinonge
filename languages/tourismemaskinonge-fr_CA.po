@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
 "POT-Creation-Date: 2020-04-17T21:03:15+00:00\n"
-"PO-Revision-Date: 2022-09-29 13:23-0400\n"
+"PO-Revision-Date: 2022-11-08 14:25-0500\n"
 "Last-Translator: Joël Dion <joel.dion@mrc-maskinonge.qc.ca>\n"
 "Language-Team: \n"
 "Language: fr_CA\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 3.2\n"
 "X-Domain: _s\n"
 
 # Admin: Accueil
@@ -411,3 +411,12 @@ msgstr "Section : Établissements mis de l'avant"
 
 msgid "Section: Other Locations"
 msgstr "Section : Autres établissements"
+
+msgid "Choose an image"
+msgstr "Choisir une image"
+
+msgid "Choose this image"
+msgstr "Choisir cette image"
+
+msgid "Category image"
+msgstr "Image de la catégorie"

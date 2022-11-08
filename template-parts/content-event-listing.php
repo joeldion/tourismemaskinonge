@@ -38,12 +38,6 @@ if ( is_archive() ) {
             <a class="tm-search-small__select tm-search-small__select--large btn btn--yellow btn--selector">
                 <select name="tm-search-small-sort-location" id="location-filter" data-post-type="tm_event">
                     <option value="" class="hidden" disabled="" selected="">Filtrer par municipalité</option>
-                    <?php /*
-                    <option value="all" selected>Tout</option>
-                    <?php foreach ( TM_MUNI as $muni ): ?>
-                        <option value="<?php echo $muni; ?>"><?php echo $muni; ?></option>
-                    <?php endforeach; ?>
-                    */ ?>
                 </select>
             </a>
         </div>

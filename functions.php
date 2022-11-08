@@ -177,6 +177,7 @@ require_once( TM_INC . 'detect-ie.php');
 require_once( TM_INC . 'enqueue.php');
 require_once( TM_INC . 'format-phone.php');
 require_once( TM_INC . 'get-single-contact-info.php');
+require_once( TM_INC . 'get-image-media-uploader.php');
 require_once( TM_INC . 'image-sizes.php');
 require_once( TM_INC . 'login.php');
 require_once( TM_INC . 'redirect-draft.php');

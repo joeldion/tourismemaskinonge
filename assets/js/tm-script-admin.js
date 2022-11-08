@@ -71,15 +71,16 @@ function initMap() {
             }
 
             mediaUploader = wp.media.frames.file_frame = wp.media({
-                title: 'Choisir une image',
+                title: tm_admin_globals.choose_an_image,
                 button: {
-                    text: 'Choisir cette image',
+                    text: tm_admin_globals.choose_this_image,
                 },
                 multiple: false,
             });
 
             mediaUploader.on('select', function () {
                 attachment = mediaUploader.state().get('selection').first().toJSON();
+                console.log(attachment);
                 mediaImage.value = attachment.id;
                 mediaPreview.style.backgroundImage = 'url(' + attachment.url + ')';
                 mediaPreview.classList.add('visible');
