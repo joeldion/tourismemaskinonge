@@ -416,12 +416,16 @@ backToTop.addEventListener("click", function(e) {
                     $('#loadmore').show();
                 }
 
-                slideUrl = response.cat_slide_url;           
-                if (slideUrl === '') slideUrl = tm_globals.default_slide;
-            
-                resultsCount.html(response.results_count);
-                slide.css('background-image', 'url(' + slideUrl + ')');
-                slide.data('image-id', response.cat_slide_id);
+                // Use category slider image
+                if (category && category !== 0) {
+                    slideUrl = response.cat_slide_url;           
+                    if (slideUrl === '') slideUrl = tm_globals.default_slide;
+                    slide.css('background-image', 'url(' + slideUrl + ')');
+                    slide.data('image-id', response.cat_slide_id);
+                }
+                
+                // Update results count
+                resultsCount.html(response.results_count);                
 
                 if ((!firstQuery && !loadmore)) {
                     let newUrl = tm_globals.base_url + '/' + catSlug + '/' + response.slug;
@@ -460,8 +464,6 @@ backToTop.addEventListener("click", function(e) {
     let selectedLocation;    
 
     function loadFilters(category = catID) {
-
-        console.log('catID = ' + catID);
         
         $.ajax({
             type: 'post',

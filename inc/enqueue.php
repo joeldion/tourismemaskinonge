@@ -104,7 +104,9 @@ function tm_enqueue() {
             'tm_event_cat_slug'   =>  _nx( 'event-category', 'event-categories', 2, 'Event category slug', TM_DOMAIN ),
             'dir_icons'           =>  TM_URL . '/img/icons/',
             'gmap_style'          =>  json_encode( TM_GMAP_STYLE ),
-            'recaptcha_key'       =>  TM_CAPTCHA_KEY
+            'recaptcha_key'       =>  TM_CAPTCHA_KEY,
+            'choose_an_image'     =>  esc_html__( 'Choose an image', TM_DOMAIN ),
+            'choose_this_image'   =>  esc_html__( 'Choose this image', TM_DOMAIN ),
             // 'no_content_found'    =>  esc_html__( "We're sorry. This category is currently empty.", TM_DOMAIN ),
         ]
     );
@@ -116,7 +118,7 @@ function tm_admin_enqueue() {
     // Admin Styles
     wp_enqueue_style(
         'tm-admin-style',
-        TM_URL . '/assets/css/tm-style-admin.css',
+        TM_URL . '/assets/css/tm-style-admin.min.css',
         [],
         time()
     );
@@ -141,6 +143,15 @@ function tm_admin_enqueue() {
         [],
         '1.0',
         true
+    );
+
+    wp_localize_script(
+        'tm-admin',
+        'tm_admin_globals',
+        [
+            'choose_an_image'     =>  esc_html__( 'Choose an image', TM_DOMAIN ),
+            'choose_this_image'   =>  esc_html__( 'Choose this image', TM_DOMAIN ),
+        ]
     );
 
 }

@@ -1,0 +1,89 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    overflow-x: hidden; 
+}
+
+.tm-meta-box input:not([type='checkbox']),
+.tm-meta-box textarea {
+    min-width: 400px;
+    max-width: 100%;
+}
+
+.form-table td {
+    vertical-align: top;
+}
+
+/* Meta Boxes */
+#editor .form-table input,
+#editor .form-table textarea {
+    width: 600px;
+    max-width: 100%;
+}
+
+/* Media Uploader */
+.tm-media-upload {
+    display: inline-block;
+    
+    &__preview {
+        display: grid;
+        grid-template-columns: 20rem min-content;
+        margin: 20px 0;
+
+        &-image {
+            height: 100px;
+            display: none;
+            background-size: cover;
+
+            &.visible {
+                display: block;
+            }
+        }
+
+        &-remove {
+            display: none;
+            cursor: pointer;
+
+            &.visible {
+                display: block;
+            }
+
+        }
+
+    }
+
+}
+
+.tm-media-image {
+    display: grid;
+    grid-template-columns: 200px min-content;
+    align-items: flex-start;
+}
+
+.tm-media-image__preview {
+    max-width: 200px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;   
+    margin: 15px 0;
+}
+
+.tm-media-image__preview.visible {
+    height: 200px;
+}
+
+.tm-media-remove {
+    display: none;
+}
+
+.tm-media-remove.visible {
+    display: block;
+}

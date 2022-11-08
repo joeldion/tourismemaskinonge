@@ -18,13 +18,10 @@ function slider_image_per_category( $term, $taxonomy ) {
     ?> 
     <tr class="form-field">
         <th>
-            <label for="tm-category-image">Image de la catégorie</label>
+            <label for="tm-category-image"><?php esc_html_e( 'Category image', TM_DOMAIN ); ?></label>
         </th>
         <td>
-            <a href="#" class="tm-media-upload" data-target="tm-category-image"><?php esc_html_e( 'Upload' ); ?></a>
-            <div class="tm-media-upload__preview<?php echo $visible; ?>" id="tm-category-image-preview" style="background-image: url(<?php echo $preview; ?>);"></div>
-            <a href="#" class="tm-media-remove<?php echo $visible; ?>" id="tm-category-image-remove"><?php esc_html_e( 'Remove' ); ?></a>
-            <input type="hidden" name="tm-category-image" id="tm-category-image" value="<?php echo $cat_image; ?>">
+            <?php get_image_media_uploader( $cat_image, 'tm-category-image' ); ?>
         </td>
     </tr>
     <?php

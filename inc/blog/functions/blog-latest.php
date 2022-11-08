@@ -20,7 +20,7 @@ function get_latest_blog_posts( $post_id = 0, $limit = 6, $size = '', $is_search
 
     if ( $posts->have_posts() ):
         ?>    
-        <div class="cards__listing" id="listing" data-post-type="post">
+        <div class="cards__listing" id="listing" data-post-type="post" >
             <?php
                 while ( $posts->have_posts() ): $posts->the_post();
                     $post = new TMCard( get_the_ID(), 'post', $size, $is_search );

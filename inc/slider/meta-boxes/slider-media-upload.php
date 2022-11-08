@@ -39,11 +39,7 @@ function tm_slider_callback() {
         <tbody>
             <tr valign="top">                
                 <td>
-                    <a href="#" class="tm-media-upload" data-target="tm-slider-image"><?php esc_html_e( 'Upload' ); ?>
-                        <div class="tm-media-upload__preview <?php echo $has_slider ? 'visible' : ''; ?>" id="tm-slider-image-preview" style="background-image: url(<?php echo $slider_preview ; ?>);"></div>
-                    </a>
-                    <a href="#" class="tm-media-remove <?php echo $has_slider ? 'visible' : ''; ?>" id="tm-slider-image-remove"><?php esc_html_e( 'Remove' ); ?></a>
-                    <input type="hidden" name="tm-slider-image" id="tm-slider-image" value="<?php echo $has_slider ? $slider_img_id : ''; ?>">
+                    <?php get_image_media_uploader( $slider_img_id, 'tm-slider-image' ); ?>
                 </td>
             </tr>
         </tbody>
