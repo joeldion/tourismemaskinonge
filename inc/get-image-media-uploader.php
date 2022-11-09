@@ -5,9 +5,8 @@
 
 function get_image_media_uploader( $image_id, $input_id ) {
     
-    $preview = !empty( $image_id ) ? wp_get_attachment_image_url( $image_id, 'tm-thumb' ) : '';
+    $preview = !empty( $image_id ) ? wp_get_attachment_image_url( $image_id, 'tm-thumb-2x' ) : '';
     $visible = !empty( $image_id ) ? ' visible' : '';
-    // $input_name = str_replace( '-', '_', $input_id );
 
     ob_start();
     ?>

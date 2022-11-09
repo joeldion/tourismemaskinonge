@@ -87,9 +87,9 @@ Version: 1.4.10
 1.4.10
 - Fix: Single event not showing main category
 
------------
 1.5.0
-- Fix: listing home pages not showing the page's slider image
 - Added localization of "tm-script-admin.js"
-- ...
------------
+- Localized some strings
+- Fix: listing home pages not showing the page's slider image
+- Fix: event location Google Maps link showing city twice
+- Home page teasers are now fully editable in admin

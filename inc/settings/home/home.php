@@ -6,6 +6,7 @@
 add_action( 'admin_menu', 'tm_home_admin_menu' );
 add_action( 'admin_init', 'tm_home_settings_slider_init' );
 add_action( 'admin_init', 'tm_home_settings_intro_init' );
+// add_action( 'admin_init', 'tm_home_settings_text_blocks_init' );
 add_action( 'admin_init', 'tm_home_settings_teasers_init' );
 
 function tm_home_admin_menu() {
@@ -46,7 +47,11 @@ function tm_home_settings_slider_init() {
 function tm_home_settings_intro_init() {
     require_once( __DIR__ . '/home-intro.php' );
 }
-
+/*
+function tm_home_settings_text_blocks_init() {
+    require_once( __DIR__ . '/home-text-blocks.php' );
+}
+*/
 function tm_home_settings_teasers_init() {
     require_once( __DIR__ . '/home-teasers.php' );
 }

@@ -25,7 +25,7 @@ html {
 /* Meta Boxes */
 #editor .form-table input,
 #editor .form-table textarea {
-    width: 600px;
+    width: 60rem;
     max-width: 100%;
 }
 
@@ -36,10 +36,10 @@ html {
     &__preview {
         display: grid;
         grid-template-columns: 20rem min-content;
-        margin: 20px 0;
+        margin: 2rem 0;
 
         &-image {
-            height: 100px;
+            height: 20rem;
             display: none;
             background-size: cover;
 

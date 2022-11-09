@@ -2,15 +2,11 @@
 
 <main id="post-<?php the_ID(); ?>" <?php post_class('main tm-home'); ?>>
 
-    <!-- <div class="slider">
-        <div class="slide slide-01"></div>
-    </div> -->
     <?php echo get_slider( get_the_ID() ); ?>
 
     <section class="tm-home__intro section">
 
         <div class="text-block">
-            <?php /*<h3 class="text-block__small text-block__small--blue-l"><?php esc_html_e( get_option( 'home_intro_subtitle' ) ); ?></h3>*/ ?>
             <h1 class="text-block__big text-block__big--blue-d"><?php esc_html_e( get_option( 'home_intro_title' ) ); ?></h1>
             <div class="text-block__body">
                 <?php echo wpautop( get_option( 'home_intro_text' ) ); ?>
@@ -18,21 +14,19 @@
             <a href="<?php esc_html_e( get_option( 'home_intro_btn_link' ) ); ?>" class="btn btn--blue btn--more"><?php esc_html_e( get_option( 'home_intro_btn_text' ) ); ?></a>
         </div>
 
-        <a href="<?php echo get_site_url(); ?>/categories-attraits/gourmand/" class="teaser teaser--blue teaser--gourmand">
-            <h3 class="teaser__title teaser__title--blue">Gourmand</h3>
-        </a>        
-        <a href="<?php echo get_site_url(); ?>/categories-attraits/nature/" class="teaser teaser--green teaser--nature">
-            <h3 class="teaser__title teaser__title--green">Nature</h3>
-        </a>
-        <a href="<?php echo get_site_url(); ?>/categories-attraits/dormir/" class="teaser teaser--yellow teaser--dormir">
-            <h3 class="teaser__title teaser__title--yellow">Où dormir</h3>
-        </a>
-        <a href="<?php echo get_site_url(); ?>/categories-attraits/culture/" class="teaser teaser--yellow teaser--culture">
-            <h3 class="teaser__title teaser__title--yellow">Culture</h3>
-        </a>
-        <a href="<?php echo get_site_url(); ?>/categories-attraits/manger/" class="teaser teaser--blue teaser--manger">
-            <h3 class="teaser__title teaser__title--blue">Où manger</h3>
-        </a>
+        <?php
+            for ( $i = 0; $i <= 5; $i++ ):
+                $teaser = unserialize( get_option( 'home_teaser_' . $i ) );
+                $teaser_image = wp_get_attachment_url( $teaser['image'] );
+                ?>
+                <a href="<?php echo $teaser['link']; ?>" 
+                   class="teaser teaser--<?php echo $i; ?> teaser--<?php echo $teaser['color']; ?>" 
+                   style="background-image: url(<?php echo $teaser_image; ?>);">
+                    <h3 class="teaser__title teaser__title--<?php echo $teaser['color']; ?>"><?php echo $teaser['title']; ?></h3>
+                </a>
+                <?php
+            endfor;
+        ?>
              
     </section>
 
