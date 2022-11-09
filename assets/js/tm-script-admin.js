@@ -1,9 +1,157 @@
 'use strict';
 
-window.onload = function() {
-    // Call initMap() if editing attraction
+const body = document.body;
+
+/*
+ *  Init
+ */
+const tm_admin_init = () => {
+    
+    /*
+     *  Call initMap() if editing attraction
+     */
     if (document.getElementById('tm_attract_details') !== null) initMap(); 
-}
+
+    /*
+     *  Combine teasers 
+     */
+    body.addEventListener('click', function(){
+        tm_combine_teaser_data();
+    });
+
+    tm_add_teaser_media_uploader();
+
+};
+
+/*
+ * Set media uploader
+ */
+const setMediaUploader = (target) => {
+
+    let mediaUploader;
+    let mediaImage = document.getElementById(target);
+    let mediaPreview = document.getElementById(target + '-preview');
+    let mediaRemoveBtn = document.getElementById(target + '-remove');
+    let attachment = '';
+    
+    if (mediaUploader) {
+        mediaUploader.open();
+        return;
+    }
+
+    mediaUploader = wp.media.frames.file_frame = wp.media({
+        title: tm_admin_globals.choose_an_image,
+        button: {
+            text: tm_admin_globals.choose_this_image,
+        },
+        multiple: false,
+    });
+
+    mediaUploader.on('select', function () {
+        attachment = mediaUploader.state().get('selection').first().toJSON();
+        console.log(attachment);
+        mediaImage.value = attachment.id;
+        mediaPreview.style.backgroundImage = 'url(' + attachment.url + ')';
+        mediaPreview.classList.add('visible');
+        mediaRemoveBtn.classList.add('visible');
+    });
+
+    mediaUploader.open();
+
+    mediaRemoveBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        mediaImage.value = '';
+        mediaPreview.style.backgroundImage = 'url()';
+        mediaPreview.classList.remove('visible');
+        mediaRemoveBtn.classList.remove('visible');
+    });
+
+    // const mediaUploadButtons = document.querySelectorAll('.tm-media-upload');
+    // for (let i = 0; i < mediaUploadButtons.length; i++) {
+    //     let btn = mediaUploadButtons[i];
+    //     let mediaImage = document.getElementById(target);
+    //     let mediaPreview = document.getElementById(target + '-preview');
+    //     let mediaRemoveBtn = document.getElementById(target + '-remove');
+    //     let attachment = '';
+        
+    //     btn.addEventListener('click', function(e) {
+    //         e.preventDefault();
+
+    //         if (mediaUploader) {
+    //             mediaUploader.open();
+    //             return;
+    //         }
+
+    //         mediaUploader = wp.media.frames.file_frame = wp.media({
+    //             title: tm_admin_globals.choose_an_image,
+    //             button: {
+    //                 text: tm_admin_globals.choose_this_image,
+    //             },
+    //             multiple: false,
+    //         });
+
+    //         mediaUploader.on('select', function () {
+    //             attachment = mediaUploader.state().get('selection').first().toJSON();
+    //             console.log(attachment);
+    //             mediaImage.value = attachment.id;
+    //             mediaPreview.style.backgroundImage = 'url(' + attachment.url + ')';
+    //             mediaPreview.classList.add('visible');
+    //             mediaRemoveBtn.classList.add('visible');
+    //         });
+    
+    //         mediaUploader.open();
+
+    //     });
+
+    //     mediaRemoveBtn.addEventListener('click', function (e) {
+    //         e.preventDefault();
+    //         mediaImage.value = '';
+    //         mediaPreview.style.backgroundImage = 'url()';
+    //         mediaPreview.classList.remove('visible');
+    //         mediaRemoveBtn.classList.remove('visible');
+    //     });
+
+    // }
+
+};
+
+/*
+ *  Home page settings
+ */
+// Teasers
+const homeTeasers = document.querySelectorAll('.home-teaser');
+const tm_add_teaser_media_uploader = () => {
+    if (homeTeasers) {
+        homeTeasers.forEach(function(e) {
+            const mediaUploadBtn = e.querySelector('.tm-media-upload');            
+            const target = mediaUploadBtn.dataset.target;
+            mediaUploadBtn.addEventListener('click', function(){
+                setMediaUploader(target);
+            });
+        });
+    }
+};
+const tm_combine_teaser_data = () => {
+
+    if (homeTeasers) {
+        for (let i = 1; i <= homeTeasers.length; i++) {
+            const image = document.getElementById('home-teaser-image-' + i).value;
+            const title = document.getElementById('home-teaser-title-' + i).value;
+            const link = document.getElementById('home-teaser-link-' + i).value;
+            const color = document.getElementById('home-teaser-color-' + i).value;
+            const dataInput = document.getElementById('home-teaser-' + i);
+            const data = {                
+                'image': image,
+                'title': title,
+                'link':  link,
+                'color': color
+            };                      
+            dataInput.value = JSON.stringify(data);            
+        }
+    }
+
+};
+
 
 /*
  *  Get coordinates
@@ -51,54 +199,10 @@ function initMap() {
  */
 (function ($) {
 
-    let mediaUploader;
-
-    const mediaUploadButtons = document.querySelectorAll('.tm-media-upload');
-    for (let i = 0; i < mediaUploadButtons.length; i++) {
-        let btn = mediaUploadButtons[i];
-        let target = btn.dataset.target;
-        let mediaImage = document.getElementById(target);
-        let mediaPreview = document.getElementById(target + '-preview');
-        let mediaRemoveBtn = document.getElementById(target + '-remove');
-        let attachment = '';
-        
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            if (mediaUploader) {
-                mediaUploader.open();
-                return;
-            }
-
-            mediaUploader = wp.media.frames.file_frame = wp.media({
-                title: tm_admin_globals.choose_an_image,
-                button: {
-                    text: tm_admin_globals.choose_this_image,
-                },
-                multiple: false,
-            });
-
-            mediaUploader.on('select', function () {
-                attachment = mediaUploader.state().get('selection').first().toJSON();
-                console.log(attachment);
-                mediaImage.value = attachment.id;
-                mediaPreview.style.backgroundImage = 'url(' + attachment.url + ')';
-                mediaPreview.classList.add('visible');
-                mediaRemoveBtn.classList.add('visible');
-            });
     
-            mediaUploader.open();
-
-        });
-
-        mediaRemoveBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            mediaImage.value = '';
-            mediaPreview.style.backgroundImage = 'url()';
-            mediaPreview.classList.remove('visible');
-            mediaRemoveBtn.classList.remove('visible');
-        });
-
-    }
 
 })(jQuery);
+
+window.onload = function() {    
+    tm_admin_init();
+}

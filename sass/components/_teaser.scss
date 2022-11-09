@@ -14,8 +14,7 @@
         min-height: 35.7rem;
     }
 
-    &--gourmand {
-        background-image: url(#{a.$teaser-path}/teaser-gourmand.jpg);
+    &--1 {
         grid-column: 1 / 2;
         grid-row: 1 / 6;
         @include a.teaser(narrow);
@@ -27,8 +26,7 @@
         }
     }
 
-    &--nature {
-        background-image: url(#{a.$teaser-path}/teaser-nature.jpg);
+    &--2 {
         grid-column: 1 / 2;
         grid-row: 6 / 11;
         @include a.teaser(narrow);
@@ -40,8 +38,7 @@
         }
     }
 
-    &--dormir {
-        background-image: url(#{a.$teaser-path}/teaser-dormir-2.jpg);
+    &--3 {
         grid-column: 1 / 2;
         grid-row: 11 / 16;
         @include a.teaser(narrow);
@@ -56,8 +53,7 @@
         }
     }
 
-    &--culture {
-        background-image: url(#{a.$teaser-path}/teaser-culture.jpg);
+    &--4 {
         grid-column: 2 / -1;
         // grid-row: 6 / 9;
         grid-row: 5 / 9;
@@ -74,8 +70,7 @@
         }
     }
 
-    &--manger {
-        background-image: url(#{a.$teaser-path}/teaser-manger.jpg);
+    &--5 {
         grid-column: 2 / -1;
         grid-row: 9 / 14;
         @include a.teaser(large);

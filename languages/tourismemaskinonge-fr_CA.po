@@ -60,6 +60,9 @@ msgstr "Titre du lien"
 msgid "Link URL"
 msgstr "URL du lien"
 
+msgid "Section:"
+msgstr "Section :"
+
 # Attraits
 msgctxt "Attraction name"
 msgid "Attraction"

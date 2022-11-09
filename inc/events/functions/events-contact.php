@@ -33,7 +33,7 @@ function get_event_info() {
     $loc_pc = esc_html( get_post_meta( $loc_id, '_tm_event_location_pc', true ) );
     $loc_gmap = esc_url( get_post_meta( $loc_id, '_tm_event_location_gmap', true ) );
     if ( empty( $loc_gmap ) ) {
-        $loc_gmap = '//google.com/maps/place/' . $gmap_format( $loc_address ) . '+' . $loc_city . '+' . $gmap_format( $loc_city );
+        $loc_gmap = '//google.com/maps/place/' . $gmap_format( $loc_address . ' ' . $loc_city . ' ' . $loc_pc );
     } 
     
     ?>
