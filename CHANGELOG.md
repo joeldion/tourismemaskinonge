@@ -1,6 +1,6 @@
 Thème MRC de Maskinongé
 Description : Site officiel de Tourisme Maskinongé | Développement et intégration : Joël Dion | Graphisme : Cognitif
-Version: 1.4.10
+Version: 1.5.0
 
 1.0.1
 - Changed style of sub-menu
