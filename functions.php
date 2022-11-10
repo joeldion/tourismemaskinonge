@@ -24,13 +24,14 @@ defined( 'TM_INC' ) or define( 'TM_INC', get_template_directory() . '/inc/' );
 // Theme Directory URL
 defined( 'TM_URL' ) or define( 'TM_URL', get_template_directory_uri() );
 // Theme Version
-defined( 'TM_VERSION' ) or define( 'TM_VERSION', '1.5.0' );
+defined( 'TM_VERSION' ) or define( 'TM_VERSION', '1.5.1' );
 
 // Slides number
 defined( 'TM_SLIDES_COUNT' ) or define( 'TM_SLIDES_COUNT', 4 );
 
 // Default slide id (will be replaced by admin setting eventually)
-defined( 'TM_DEFAULT_SLIDE' ) or define( 'TM_DEFAULT_SLIDE', 430 );
+// defined( 'TM_DEFAULT_SLIDE' ) or define( 'TM_DEFAULT_SLIDE', 430 );
+defined( 'TM_DEFAULT_SLIDE' ) or define( 'TM_DEFAULT_SLIDE', 2475 );
 
 // Municipalités
 defined( 'TM_MUNI' ) or define( 'TM_MUNI', 
