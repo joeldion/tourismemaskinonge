@@ -31,14 +31,13 @@
             }
 
             // Show modal on new session
-            if ( !$_SESSION['tm-modal-202210'] ) {
-                $_SESSION['tm-modal-202210'] = true;
-                $expiration = strtotime('2022-10-30 16:00');
+            if ( !$_SESSION['tm-modal-noel22'] ) {
+                $_SESSION['tm-modal-noel22'] = true;
+                $expiration = strtotime('2022-12-11 16:00');
                 if ( time() < $expiration ) {
                     echo tm_get_modal();
                 }
             }
-
         ?>
 
         <header class="header" role="banner">
