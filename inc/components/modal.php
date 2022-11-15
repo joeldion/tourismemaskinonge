@@ -12,19 +12,19 @@ function tm_get_modal() {
     <div class="tm-modal">
         <div class="tm-modal__close" id="modal-close"></div>
         <div class="tm-modal__header">
-            <h3 class="tm-modal__title">Bon appétit Maski</h3> 
-            <h4 class="tm-modal__subtitle">Événement gourmand en restaurant</h4>
-            <h5 class="tm-modal__title">Du 20 au 30 octobre 2022</h5>
+            <h3 class="tm-modal__title">Marché de Noël de la MRC de Maskinongé</h3> 
+            <h4 class="tm-modal__subtitle">Agroa Desjardins, Louiseville</h4>
+            <h5 class="tm-modal__title">Les 10 et 11 décembre 2022</h5>
         </div>        
         <div class="tm-modal__content tm-modal__content--single">
             <div class="tm-modal__item tm-modal__item--single">
-                <img class="tm-modal__img" src="<?php echo TM_URL . '/img/logos/logo-bon-appetit-maski-modal-resto-1x.png'; ?>" srcset="<?php echo TM_URL . '/img/logos/logo-bon-appetit-maski-modal-resto-1x.png 1x, ' . TM_URL . '/img/logos/logo-bon-appetit-maski-modal-resto.png 2x'; ?>" alt="Bon appétit Maski" height="235" width="300">
+                <img class="tm-modal__img" src="<?php echo get_site_url() . '/wp-content/uploads/2022/11/marche-noel-mrc-maskinonge-modal-1x.jpg'; ?>" srcset="<?php echo get_site_url() . '/wp-content/uploads/2022/11/marche-noel-mrc-maskinonge-modal-1x.jpg 1x, ' . get_site_url() . '/wp-content/uploads/2022/11/marche-noel-mrc-maskinonge-modal.jpg 2x'; ?>" alt="Bon appétit Maski" height="300" width="275">
                 <div class="tm-modal__desc">
                     <?php /* <h4 class="tm-modal__title tm-modal__title--secondary">Tournée gourmande</h4> */ ?>
-                    <p>Produits locaux en vedette dans des tables d’hôte trois services au prix unique de 45$. </p>
-                    <p>Certains restaurateurs offrent la table d’hôte pour emporter. </p>
-                    <p>Réservez votre repas auprès des restaurateurs participants.</p>
-                    <p><a href="https://bonappetitmaski.com/#restaurants" class="tm-modal__cta" target="_blank" rel="noopener" aria-label="Bon appétit Maski">En savoir plus</a></p>                
+                    <p>Visitez le Marché de Noël de la MRC de Maskinongé pour dénicher le cadeau parfait fabriqué par un artisan ou un producteur de la région.</p>
+                    <p>Plus d’une vingtaine d’artisans et de producteurs sur place.</p>
+                    <p>Entrée gratuite.</p>
+                    <p><a href="https://mrcmaskinonge.ca/tourisme-culture-patrimoine/marche-noel/?utm_source=modal&utm_medium=cta&utm_campaign=marchenoel22&utm_id=marchenoel22" class="tm-modal__cta" target="_blank" rel="noopener">En savoir plus</a></p>                
                 </div>
             </div>
             <?php /*
