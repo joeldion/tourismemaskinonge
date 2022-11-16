@@ -1,161 +1,68 @@
 'use strict';
 
 const body = document.body;
+const isHomeSettingsPage = document.getElementById('home-settings') ? true : '';
+const isAttractEditPage = document.getElementById('tm_attract_details') ? true : '';
 
 /*
  *  Init
  */
-const tm_admin_init = () => {
-    
-    /*
-     *  Call initMap() if editing attraction
-     */
-    if (document.getElementById('tm_attract_details') !== null) initMap(); 
+window.onload = function() { 
 
-    /*
-     *  Combine teasers 
-     */
-    body.addEventListener('click', function(){
-        tm_combine_teaser_data();
-    });
+    // Toggle media uploader on button click
+    toggleMediaUploader();
 
-    tm_add_teaser_media_uploader();
+    // Home page settings
+    if (isHomeSettingsPage) combineTeasersData();
+
+    // Single attraction edit page
+    if (isAttractEditPage) initMap(); 
 
 };
 
 /*
- * Set media uploader
+ *  General
  */
-const setMediaUploader = (target) => {
 
-    let mediaUploader;
-    let mediaImage = document.getElementById(target);
-    let mediaPreview = document.getElementById(target + '-preview');
-    let mediaRemoveBtn = document.getElementById(target + '-remove');
-    let attachment = '';
-    
-    if (mediaUploader) {
-        mediaUploader.open();
-        return;
+// Toggle media uploader on button click
+const toggleMediaUploader = function() {
+    const mediaUploaderBtns = document.querySelectorAll('.tm-media-upload');
+    if (mediaUploaderBtns) {
+        mediaUploaderBtns.forEach(function(e) {
+            e.addEventListener('click', function() {
+                setMediaUploader(e.dataset.target);
+            });
+        });
     }
-
-    mediaUploader = wp.media.frames.file_frame = wp.media({
-        title: tm_admin_globals.choose_an_image,
-        button: {
-            text: tm_admin_globals.choose_this_image,
-        },
-        multiple: false,
-    });
-
-    mediaUploader.on('select', function () {
-        attachment = mediaUploader.state().get('selection').first().toJSON();
-        console.log(attachment);
-        mediaImage.value = attachment.id;
-        mediaPreview.style.backgroundImage = 'url(' + attachment.url + ')';
-        mediaPreview.classList.add('visible');
-        mediaRemoveBtn.classList.add('visible');
-    });
-
-    mediaUploader.open();
-
-    mediaRemoveBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        mediaImage.value = '';
-        mediaPreview.style.backgroundImage = 'url()';
-        mediaPreview.classList.remove('visible');
-        mediaRemoveBtn.classList.remove('visible');
-    });
-
-    // const mediaUploadButtons = document.querySelectorAll('.tm-media-upload');
-    // for (let i = 0; i < mediaUploadButtons.length; i++) {
-    //     let btn = mediaUploadButtons[i];
-    //     let mediaImage = document.getElementById(target);
-    //     let mediaPreview = document.getElementById(target + '-preview');
-    //     let mediaRemoveBtn = document.getElementById(target + '-remove');
-    //     let attachment = '';
-        
-    //     btn.addEventListener('click', function(e) {
-    //         e.preventDefault();
-
-    //         if (mediaUploader) {
-    //             mediaUploader.open();
-    //             return;
-    //         }
-
-    //         mediaUploader = wp.media.frames.file_frame = wp.media({
-    //             title: tm_admin_globals.choose_an_image,
-    //             button: {
-    //                 text: tm_admin_globals.choose_this_image,
-    //             },
-    //             multiple: false,
-    //         });
-
-    //         mediaUploader.on('select', function () {
-    //             attachment = mediaUploader.state().get('selection').first().toJSON();
-    //             console.log(attachment);
-    //             mediaImage.value = attachment.id;
-    //             mediaPreview.style.backgroundImage = 'url(' + attachment.url + ')';
-    //             mediaPreview.classList.add('visible');
-    //             mediaRemoveBtn.classList.add('visible');
-    //         });
-    
-    //         mediaUploader.open();
-
-    //     });
-
-    //     mediaRemoveBtn.addEventListener('click', function (e) {
-    //         e.preventDefault();
-    //         mediaImage.value = '';
-    //         mediaPreview.style.backgroundImage = 'url()';
-    //         mediaPreview.classList.remove('visible');
-    //         mediaRemoveBtn.classList.remove('visible');
-    //     });
-
-    // }
-
 };
 
 /*
  *  Home page settings
  */
-// Teasers
-const homeTeasers = document.querySelectorAll('.home-teaser');
-const tm_add_teaser_media_uploader = () => {
-    if (homeTeasers) {
-        homeTeasers.forEach(function(e) {
-            const mediaUploadBtn = e.querySelector('.tm-media-upload');            
-            const target = mediaUploadBtn.dataset.target;
-            mediaUploadBtn.addEventListener('click', function(){
-                setMediaUploader(target);
-            });
+const combineTeasersData = () => {
+    const homePageSettingsForm = document.querySelector('form[action="options.php"]');
+    const homeTeasers = document.querySelectorAll('.home-teaser');
+    if (homePageSettingsForm && homeTeasers) {
+        homePageSettingsForm.addEventListener('submit', function() {
+            for (let i = 1; i <= homeTeasers.length; i++) {
+                const image = document.getElementById('home-teaser-image-' + i).value;
+                const title = document.getElementById('home-teaser-title-' + i).value;
+                const link = document.getElementById('home-teaser-link-' + i).value;
+                const color = document.getElementById('home-teaser-color-' + i).value;
+                const dataInput = document.getElementById('home-teaser-' + i);
+                const data = {                
+                    'image': image,
+                    'title': title,
+                    'link':  link,
+                    'color': color
+                };                      
+                dataInput.value = JSON.stringify(data);
+            }
         });
     }
 };
-const tm_combine_teaser_data = () => {
 
-    if (homeTeasers) {
-        for (let i = 1; i <= homeTeasers.length; i++) {
-            const image = document.getElementById('home-teaser-image-' + i).value;
-            const title = document.getElementById('home-teaser-title-' + i).value;
-            const link = document.getElementById('home-teaser-link-' + i).value;
-            const color = document.getElementById('home-teaser-color-' + i).value;
-            const dataInput = document.getElementById('home-teaser-' + i);
-            const data = {                
-                'image': image,
-                'title': title,
-                'link':  link,
-                'color': color
-            };                      
-            dataInput.value = JSON.stringify(data);            
-        }
-    }
-
-};
-
-
-/*
- *  Get coordinates
- */
+// Get attraction coordinates using Google Maps
 function initMap() {
 
     const address = document.getElementById('tm-attract-address');
@@ -195,14 +102,45 @@ function initMap() {
 }
 
 /*
- * Media Uploader
+ *  Media uploader
  */
-(function ($) {
+const setMediaUploader = (target) => {
 
+    let mediaUploader;
+    let mediaImage = document.getElementById(target);
+    let mediaPreview = document.getElementById(target + '-preview');
+    let mediaRemoveBtn = document.getElementById(target + '-remove');
+    let attachment = '';
     
+    if (mediaUploader) {
+        mediaUploader.open();
+        return;
+    }
 
-})(jQuery);
+    mediaUploader = wp.media.frames.file_frame = wp.media({
+        title: tm_admin_globals.choose_an_image,
+        button: {
+            text: tm_admin_globals.choose_this_image,
+        },
+        multiple: false,
+    });
 
-window.onload = function() {    
-    tm_admin_init();
-}
+    mediaUploader.on('select', function () {
+        attachment = mediaUploader.state().get('selection').first().toJSON();
+        mediaImage.value = attachment.id;
+        mediaPreview.style.backgroundImage = 'url(' + attachment.url + ')';
+        mediaPreview.classList.add('visible');
+        mediaRemoveBtn.classList.add('visible');
+    });
+
+    mediaUploader.open();
+
+    mediaRemoveBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        mediaImage.value = '';
+        mediaPreview.style.backgroundImage = 'url()';
+        mediaPreview.classList.remove('visible');
+        mediaRemoveBtn.classList.remove('visible');
+    });
+
+};
