@@ -95,7 +95,9 @@ class TMCard {
     }
 
     public function format_day( $date ) {
-        return preg_replace( '/^(0?)(\d)$/', '$2', substr( $date, -2 ) );
+        $formatted_date = preg_replace( '/^(0?)(\d)$/', '$2', substr( $date, -2 ) );
+        if ( $formatted_date === '1' ) $formatted_date .= '<sup>er</sup>';
+        return $formatted_date;
     }
 
     public function format_month( $date ) {

@@ -9,6 +9,7 @@ function get_event_info() {
 
     $date_format = function( $date ) {
         $formatted_date = date_i18n( 'l j F Y', strtotime( $date ) );
+        $formatted_date = preg_replace( '/\s1\s/', ' 1er ', $formatted_date );
         return ucfirst( mb_strtolower( $formatted_date ) );
     };
     $time_format = function( $time ) {
