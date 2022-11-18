@@ -102,3 +102,4 @@ Version: 1.5.3
 
 1.5.3
 - Fix: today's events considered expired and not showing
+- Added '<sup>er</sup>' to card first day of month (french)
