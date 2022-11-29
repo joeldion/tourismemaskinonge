@@ -29,8 +29,8 @@ function get_events_listing( $limit = 9 ) {
         'meta_query'        =>  [
                                     'relation'  =>  'AND',
                                     [
-                                        'key'   =>  '_tm_event_end_date',                                        
-                                        'value' =>  date( 'Y-m-d H:i:s', strtotime( '-1 day' ) ),
+                                        'key'       =>  '_tm_event_end_date',                                        
+                                        'value'     =>  date( 'Y-m-d H:i:s', strtotime( '-1 day' ) ),
                                         'compare'   =>  '>',
                                         'type'      =>  'DATETIME'
                                     ],

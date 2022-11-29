@@ -14,9 +14,12 @@ $args = [
     'post_type'     =>  'tm_event',
     'post_status'   =>  'publish',
     'meta_query'    =>  [
+                            'relation'  =>  'AND',
                             [
                                 'key'       =>  '_tm_event_end_date',
-                                'value'     =>  current_time( 'mysql' ) + 86400, // Tomorrow
+                                //'value'     =>  current_time( 'mysql' ) + 86400, // Tomorrow
+                                //'compare'   =>  '<',
+                                'value'     =>  date( 'Y-m-d', strtotime( '-1 day' ) ),
                                 'compare'   =>  '<',
                                 'type'      =>  'DATETIME'
                             ]
