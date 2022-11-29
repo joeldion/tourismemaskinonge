@@ -34,7 +34,7 @@
         
         <div class="text-block">
             <h3 class="text-block__small text-block__small--yellow-d">Attraits et activités</h3>
-            <h1 class="text-block__big text-block__big--yellow-l">À la découverte de notre belle région&nbsp;!</h1>
+            <h2 class="text-block__big text-block__big--yellow-l">À la découverte de notre belle région&nbsp;!</h2>
             <p class="text-block__body">Agrotourisme, culture, plein air : les attraits et activités sont diversifiés dans la région. Que ce soit pour planifier son week-end ou pour prévoir ses vacances estivales, Maskinongé offre une panoplie d’activités et d’attraits à découvrir.</p>
             <a href="<?php echo get_site_url(); ?>/attraits/" class="btn btn--yellow btn--more">Voir plus</a>
         </div>
@@ -47,7 +47,7 @@
 
         <div class="text-block">
             <h3 class="text-block__small text-block__small--yellow-d">Événements</h3>
-            <h1 class="text-block__big text-block__big--yellow-l">Plusieurs événements à venir bientôt&nbsp;!</h1>
+            <h2 class="text-block__big text-block__big--yellow-l">Plusieurs événements à venir bientôt&nbsp;!</h2>
             <p class="text-block__body">Pour demeurer au courant des événements et activités dans la région, consultez régulièrement notre site web. Restez à l’affût! Ça bouge dans Maskinongé!</p>
             <a href="<?php echo get_site_url(); ?>/evenements/" class="btn btn--yellow btn--more">Voir plus</a>
         </div>
@@ -62,7 +62,7 @@
 
         <div class="text-block">
             <h3 class="text-block__small text-block__small--blue-l">Blogue</h3>
-            <h1 class="text-block__big text-block__big--blue-d">Envie d'en apprendre plus sur notre région ?</h1>
+            <h2 class="text-block__big text-block__big--blue-d">Envie d'en apprendre plus sur notre région ?</h2>
             <p class="text-block__body">L’équipe de Tourisme Maskinongé vous fait plusieurs suggestions d’activités et de sorties pour vous inspirer et planifier votre prochaine visite dans la région.</p>
             <a href="<?php echo get_site_url(); ?>/blogue/" class="btn btn--blue btn--more">Voir plus</a>
         </div>
