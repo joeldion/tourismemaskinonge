@@ -4,8 +4,6 @@
  *  Meta Box: Attraction Details
 */
 
-date_default_timezone_set('America/New_York');
-
 add_action( 'add_meta_boxes', 'tm_attract_details_meta_box' );
 add_action( 'save_post', 'tm_attract_details_meta_box_save' );
 

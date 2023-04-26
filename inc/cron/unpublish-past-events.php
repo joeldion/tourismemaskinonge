@@ -3,8 +3,6 @@
 ** Cron Job: Unpublish past events
 */
 
-date_default_timezone_set('America/New_York');
-
 require_once( '/var/www/html/tourismemaskinonge/wp-load.php' );
 
 /* 
