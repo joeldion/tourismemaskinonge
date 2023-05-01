@@ -71,7 +71,7 @@ function get_event_info() {
                 <li class="tm-contact__item tm-contact__location tm-contact__location--yellow">
                     <span>
                         <a href="<?php echo $loc_gmap; ?>" class="tm-contact__gmap" target="_blank">
-                            <strong><?php echo get_the_title( $loc_id ); ?></strong><br />
+                            <h3 class="tm-contact__location-title"><?php echo get_the_title( $loc_id ); ?></h3>
                             <?php echo $loc_address; ?><br />
                             <?php echo $loc_city . '&nbsp;' . $loc_pc; ?>
                         </a>

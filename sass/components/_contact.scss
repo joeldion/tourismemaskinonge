@@ -8,6 +8,8 @@
     list-style: none;
     padding-left: 0;
 
+
+
     &--event {
         margin: 3rem 0;
         // margin-top: 3rem;
@@ -73,6 +75,13 @@
             &::before {
                 background-image: url(a.$icon-marker-yellow);
             }
+        }
+        &-title {
+            margin: 0;
+            color: a.$color-white;
+            font-size: 2rem;
+            font-weight: 500;
+            line-height: 3rem;            
         }
     }
 
