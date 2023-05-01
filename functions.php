@@ -31,7 +31,7 @@ defined( 'TM_SLIDES_COUNT' ) or define( 'TM_SLIDES_COUNT', 4 );
 
 // Default slide id (will be replaced by admin setting eventually)
 // defined( 'TM_DEFAULT_SLIDE' ) or define( 'TM_DEFAULT_SLIDE', 430 );
-defined( 'TM_DEFAULT_SLIDE' ) or define( 'TM_DEFAULT_SLIDE', 2475 );
+defined( 'TM_DEFAULT_SLIDE' ) or define( 'TM_DEFAULT_SLIDE', 1576 );
 
 // Municipalités
 defined( 'TM_MUNI' ) or define( 'TM_MUNI', 
