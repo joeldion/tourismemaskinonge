@@ -1,5 +1,84 @@
 {
-    "editor.codeActionsOnSave": {
+    "workbench.colorTheme": "Monokai Pro",
+    "files.autoSave": "onFocusChange",
+    "editor.minimap.enabled": true,
+    "workbench.statusBar.visible": true,
+    "workbench.activityBar.visible": true,
+    "workbench.colorCustomizations": {
+      "statusBar.background": "#333333",
+      "statusBar.noFolderBackground": "#333333",
+      "statusBar.debuggingBackground": "#263238"
+    },
+    "editor.fontSize": 16,
+    "css.validate": false,
+    "scss.validate": false,
+    "less.validate": false,
+    "editor.wordWrap": "on",
+    "liveSassCompile.settings.autoprefix": [],
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": "../"
+            // "savePath": "./assets/css/" // admin
+        }
+    ],
+    "liveSassCompile.settings.generateMap": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.startupEditor": "none",
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "editor.codeActionsOnSave": null,
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "workbench.iconTheme": "Monokai Pro Icons",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false,
+    "todohighlight.isCaseSensitive": true,
+    "todohighlight.keywords": [
+      {
+        "text": "BUG",
+        "color": "#fff",
+        "backgroundColor": "#e74c3c"
+      },
+      {
+        "text": "TODO",
+        "color": "#fff",
+        "backgroundColor": "#0256a0"
+      },
+      {
+        "text": "IN PROGRESS",
+        "color": "#333",
+        "backgroundColor": "#f7a807"
+      },
+      {
+        "text": "DONE",
+        "color": "#333",
+        "backgroundColor": "#2ecc71"
+      }
+    ],
+    "liveSassCompile.settings.forceBaseDirectory": "",
+    "liveSassCompile.settings.includeItems": [
     
-    }
-}
+
+
+    
+
+
+
+
+
+
+    
+  
+  
+  
+    
+    ],
+    "terminal.external.windowsExec": "C:\\Program Files\\Git\\git-bash.exe",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "settingsSync.ignoredSettings": [
+    
+    ]
+  }
+  
