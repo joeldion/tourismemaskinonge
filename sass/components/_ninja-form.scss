@@ -39,6 +39,11 @@
         input[type=submit] {
             cursor: pointer;
             padding: 0 3rem;
+            background-color: a.$color-blue-dark;
+            border-radius: 4rem;
+            border: 0;
+            font-weight: 700;
+            font-family: a.$font-primary;
         }
 
     }
