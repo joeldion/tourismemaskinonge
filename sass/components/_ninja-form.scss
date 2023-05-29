@@ -44,6 +44,12 @@
             border: 0;
             font-weight: 700;
             font-family: a.$font-primary;
+
+            &:hover {
+                color: a.$color-white;
+                background-color: a.$color-black;
+            }
+
         }
 
     }
