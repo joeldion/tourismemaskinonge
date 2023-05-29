@@ -1,0 +1,83 @@
+@use '../abstracts' as a;
+
+.container {
+
+    .nf-before-form-content {
+        margin-bottom: 4rem;
+    }
+
+    .nf-form-content {
+
+        label {
+            font-size: 1.8rem;
+        }
+
+        hr.ninja-forms-field {
+            margin: 3rem 0;
+        }
+
+    }
+
+    .nf-field-label {
+
+        label,
+        span {
+            font-family: a.$font-secondary;
+            font-weight: 300;
+            font-size: 2rem;
+            line-height: 2.8rem;
+        }
+        
+    }
+
+    &.hr-container {
+        margin: 5rem 0;
+    }
+
+    .nf-form-content {
+
+        input[type=submit] {
+            cursor: pointer;
+            padding: 0 3rem;
+        }
+
+    }
+
+    .checkbox-container {
+    
+        &.label-right label {
+
+            &::before {
+                top: -5px;
+            }
+
+            &::before,
+            &::after {
+                cursor: pointer;
+            }
+
+        }
+        
+    }
+    
+
+    .nf-error-msg,
+    .nf-error .nf-error-msg {
+        color: a.$color-red-dark;
+        font-family: a.$font-secondary;
+        font-weight: 300;
+        font-size: 2rem;
+        line-height: 2.8rem;
+    }
+
+    .nf-form-fields-required {
+        font-family: a.$font-secondary;
+        font-weight: 300;
+        font-size: 2rem;
+        line-height: 2.8rem;
+    }
+
+    
+    
+}
+

@@ -13,25 +13,16 @@ function tm_enqueue() {
     */
     wp_register_style(
         'tm-style',
-        TM_URL . '/style.css',
+        TM_URL . '/assets/css/tm-style.css',
         [],
         $version,
         'all'
     );
-    wp_register_style(
-        'tm-style-min',
-        TM_URL . '/style.min.css',
-        ['tm-style'],
-        $version,
-        'all'
-    );
     wp_enqueue_style('tm-style');
-    wp_enqueue_style('tm-style-min');
 
     /*
      * Enqueue Scripts
-    */ 
-
+    */
     wp_register_script(
         'tm-gmap',
         TM_URL . '/assets/js/tm-gmap.js',
@@ -118,7 +109,7 @@ function tm_admin_enqueue() {
     // Admin Styles
     wp_enqueue_style(
         'tm-admin-style',
-        TM_URL . '/assets/css/tm-style-admin.min.css',
+        TM_URL . '/assets/css/tm-style-admin.css',
         [],
         time()
     );
