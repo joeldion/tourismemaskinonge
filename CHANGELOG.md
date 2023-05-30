@@ -1,6 +1,6 @@
 Thème MRC de Maskinongé
 Description : Site officiel de Tourisme Maskinongé | Développement et intégration : Joël Dion | Graphisme : Cognitif
-Version: 1.5.9
+Version: 1.5.10
 
 1.0.1
 - Changed style of sub-menu
@@ -124,3 +124,6 @@ Version: 1.5.9
 1.5.9
 - Added Ninja Forms style
 - Changed "style.min.css" to "assets/css/tm-style.css"
+
+1.5.10
+- Fix: Blog post title background shape overlapping text on mobile

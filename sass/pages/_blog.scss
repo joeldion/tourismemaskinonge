@@ -41,6 +41,22 @@
                 top: -34rem;
                 left: -44rem;
                 transform: rotate(-33deg);
+    
+                @include a.respond(screen_1200) {
+                    background-size: 92rem;               
+                    top: -40rem;
+                    left: -35rem;
+                }
+
+                @include a.respond(screen_900) {
+                    background-size: 80rem;
+                    left: -30rem;
+                }
+
+                @include a.respond(screen_767) {
+                    background-size: 70rem;
+                }
+
             }
 
             &::after {
